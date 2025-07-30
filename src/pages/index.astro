@@ -2,112 +2,262 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import LeadForm from '../components/LeadForm.astro';
 ---
 
-<BaseLayout title="Hunter Galloway – Award-Winning Mortgage Brokers" 
+<BaseLayout title="Mortgage Broker Brisbane | Hunter Galloway | Award winning brokers" 
            description="Hunter Galloway are award-winning mortgage brokers helping Australians secure their dream homes with expert advice and competitive rates.">
   <Fragment slot="header"><SiteHeader /></Fragment>
   
   <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-neutral to-white py-section">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h1 class="text-4xl md:text-6xl font-bold text-primary mb-6">
-        Award-Winning <span class="text-accent2">Mortgage Brokers</span>
-      </h1>
-      <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-        We help Australians secure their dream homes with expert advice, competitive rates, and personalized service. Get your free assessment today.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/free-assessment" class="btn-primary">
-          Get Free Assessment
-        </a>
-        <a href="/contact" class="btn-secondary">
-          Contact Us
-        </a>
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <!-- Left Content -->
+        <div>
+          <h1 class="text-4xl md:text-5xl font-bold text-primary mb-6 leading-tight">
+            Our award-winning Mortgage Brokers in Brisbane
+          </h1>
+          <p class="text-xl text-gray-700 mb-6">
+            will find you the right home loan for your situation
+          </p>
+          <!-- Award Badges -->
+          <div class="flex flex-wrap gap-4 mb-8">
+            <img src="/images/awards/best-mortgage-broker-2019.png" alt="Best Mortgage Broker 2019" class="h-20 w-auto" />
+            <img src="/images/awards/finance-broker-year-2018.png" alt="Finance Broker of the Year 2018" class="h-20 w-auto" />
+            <img src="/images/awards/vow-award.png" alt="VOW Award" class="h-20 w-auto" />
+          </div>
+          <a href="/free-assessment" class="btn-primary inline-block">
+            Get your FREE Mortgage Assessment
+          </a>
+        </div>
+        <!-- Right Image -->
+        <div>
+          <img src="/images/hero-family.jpg" alt="Happy family with new home" class="w-full rounded-lg shadow-lg" />
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Services Grid -->
-  <section class="py-section bg-white">
+  <!-- How We Help Section -->
+  <section class="py-section bg-neutral">
     <div class="max-w-7xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-primary mb-4">Our Services</h2>
-        <p class="text-lg text-gray-600">Comprehensive mortgage solutions for every situation</p>
-      </div>
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4">
+        Who do you need us to help?
+      </h2>
+      <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+        We specialise in helping all types of home buyers secure the perfect loan
+      </p>
       
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="bg-neutral rounded-lg p-6 text-center">
-          <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- First Home Buyers -->
+        <div class="bg-white rounded-lg p-8 text-center shadow-md hover:shadow-lg transition-shadow">
+          <div class="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold mb-2">First Home Buyers</h3>
-          <p class="text-gray-600 mb-4">Expert guidance for your first property purchase, including grants and special deals.</p>
-          <a href="/first-home-loans" class="text-accent2 font-medium hover:text-accent2/80">Learn More →</a>
+          <h3 class="text-xl font-bold mb-3">First Home Buyers</h3>
+          <p class="text-gray-600 mb-6">
+            Get expert guidance through your first property purchase with access to grants and special rates
+          </p>
+          <a href="/first-home-buyer-loans" class="text-accent2 font-medium hover:text-accent2/80">
+            Learn More →
+          </a>
         </div>
-        
-        <div class="bg-neutral rounded-lg p-6 text-center">
-          <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+
+        <!-- Home Upgrade -->
+        <div class="bg-white rounded-lg p-8 text-center shadow-md hover:shadow-lg transition-shadow">
+          <div class="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold mb-2">Refinancing</h3>
-          <p class="text-gray-600 mb-4">Lower your rates and reduce payments with our refinancing solutions.</p>
-          <a href="/refinance-home-loan" class="text-accent2 font-medium hover:text-accent2/80">Learn More →</a>
+          <h3 class="text-xl font-bold mb-3">Home Upgrade</h3>
+          <p class="text-gray-600 mb-6">
+            Ready to upgrade? We'll help you transition smoothly to your dream home
+          </p>
+          <a href="/upgrade-my-home" class="text-accent2 font-medium hover:text-accent2/80">
+            Learn More →
+          </a>
         </div>
-        
-        <div class="bg-neutral rounded-lg p-6 text-center">
-          <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+
+        <!-- Investment Property -->
+        <div class="bg-white rounded-lg p-8 text-center shadow-md hover:shadow-lg transition-shadow">
+          <div class="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
             </svg>
           </div>
-          <h3 class="text-xl font-bold mb-2">Investment Loans</h3>
-          <p class="text-gray-600 mb-4">Build your property portfolio with our investment loan expertise.</p>
-          <a href="/investment-loans" class="text-accent2 font-medium hover:text-accent2/80">Learn More →</a>
+          <h3 class="text-xl font-bold mb-3">Investment Property</h3>
+          <p class="text-gray-600 mb-6">
+            Build wealth through property with our investment loan expertise
+          </p>
+          <a href="/investment-loans-queensland" class="text-accent2 font-medium hover:text-accent2/80">
+            Learn More →
+          </a>
+        </div>
+      </div>
+
+      <!-- Additional Services -->
+      <div class="grid md:grid-cols-3 gap-8 mt-8">
+        <!-- Refinancing -->
+        <div class="bg-white rounded-lg p-8 text-center shadow-md hover:shadow-lg transition-shadow">
+          <div class="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Refinancing</h3>
+          <p class="text-gray-600 mb-6">
+            Lower your rate and save thousands on your existing home loan
+          </p>
+          <a href="/refinance-home-loan" class="text-accent2 font-medium hover:text-accent2/80">
+            Learn More →
+          </a>
+        </div>
+
+        <!-- Guarantor Loans -->
+        <div class="bg-white rounded-lg p-8 text-center shadow-md hover:shadow-lg transition-shadow">
+          <div class="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Guarantor Loans</h3>
+          <p class="text-gray-600 mb-6">
+            Get into property sooner with family support and zero deposit options
+          </p>
+          <a href="/guarantor-home-loan" class="text-accent2 font-medium hover:text-accent2/80">
+            Learn More →
+          </a>
+        </div>
+
+        <!-- Specialist Loans -->
+        <div class="bg-white rounded-lg p-8 text-center shadow-md hover:shadow-lg transition-shadow">
+          <div class="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Specialist Loans</h3>
+          <p class="text-gray-600 mb-6">
+            Doctors, nurses, and professionals - access exclusive rates and benefits
+          </p>
+          <a href="/home-loans-for-doctors" class="text-accent2 font-medium hover:text-accent2/80">
+            Learn More →
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Stats Section -->
-  <section class="bg-accent2 text-white py-section">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-4">Why Choose Hunter Galloway?</h2>
-      <p class="text-xl mb-8 opacity-90">Award-winning service with over 30 lenders and hundreds of loan products</p>
+  <!-- Quick Assessment Form -->
+  <section class="py-section bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-4">
+        Get Your Free Assessment in 60 Seconds
+      </h2>
+      <p class="text-center text-gray-600 mb-8">
+        Find out how much you can borrow and what grants you're eligible for
+      </p>
+      <LeadForm />
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section class="py-section bg-accent2 text-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+        Why Choose Hunter Galloway?
+      </h2>
       
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12">
+      <div class="grid md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="text-5xl font-bold mb-2">12+</div>
+          <div class="text-xl">Years Experience</div>
+        </div>
+        <div>
+          <div class="text-5xl font-bold mb-2">2000+</div>
+          <div class="text-xl">Happy Customers</div>
+        </div>
+        <div>
+          <div class="text-5xl font-bold mb-2">30+</div>
+          <div class="text-xl">Lenders</div>
+        </div>
+        <div>
+          <div class="text-5xl font-bold mb-2">$0</div>
+          <div class="text-xl">Service Fee</div>
+        </div>
+      </div>
+      
+      <div class="mt-12 grid md:grid-cols-3 gap-8">
         <div class="text-center">
-          <div class="text-4xl font-bold mb-2">30+</div>
-          <div class="text-blue-100">Lenders</div>
+          <h3 class="text-2xl font-bold mb-3">Expert Advice</h3>
+          <p class="opacity-90">
+            Our experienced brokers understand the market and will find the perfect loan for your situation
+          </p>
         </div>
         <div class="text-center">
-          <div class="text-4xl font-bold mb-2">100+</div>
-          <div class="text-blue-100">Loan Products</div>
+          <h3 class="text-2xl font-bold mb-3">Better Rates</h3>
+          <p class="opacity-90">
+            Access to 30+ lenders means we can negotiate better rates than going direct to banks
+          </p>
         </div>
         <div class="text-center">
-          <div class="text-4xl font-bold mb-2">5★</div>
-          <div class="text-blue-100">Rating</div>
-        </div>
-        <div class="text-center">
-          <div class="text-4xl font-bold mb-2">Free</div>
-          <div class="text-blue-100">Assessment</div>
+          <h3 class="text-2xl font-bold mb-3">End-to-End Support</h3>
+          <p class="opacity-90">
+            From pre-approval to settlement and beyond, we're with you every step of the way
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA Section -->
+  <!-- Testimonials Section -->
   <section class="py-section bg-neutral">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold text-primary mb-4">Ready to Get Started?</h2>
-      <p class="text-lg text-gray-600 mb-8">Book your free assessment and let our experts find you the perfect loan</p>
-      <a href="/free-assessment" class="btn-primary">
-        Get Your Free Assessment
-      </a>
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-primary mb-12">
+        What Our Clients Say
+      </h2>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="flex mb-4">
+            <span class="text-accent text-2xl">★★★★★</span>
+          </div>
+          <p class="text-gray-700 mb-4">
+            "Hunter Galloway made our first home purchase so easy. They found us a great rate and guided us through every step."
+          </p>
+          <p class="font-bold">- Sarah & Michael</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="flex mb-4">
+            <span class="text-accent text-2xl">★★★★★</span>
+          </div>
+          <p class="text-gray-700 mb-4">
+            "Refinancing with Hunter Galloway saved us $300/month. Should have done it sooner!"
+          </p>
+          <p class="font-bold">- David Chen</p>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="flex mb-4">
+            <span class="text-accent text-2xl">★★★★★</span>
+          </div>
+          <p class="text-gray-700 mb-4">
+            "Professional, knowledgeable, and always available. Highly recommend for investment properties."
+          </p>
+          <p class="font-bold">- Emma Thompson</p>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="/contact" class="btn-primary">
+          Get Your Free Assessment Today
+        </a>
+      </div>
     </div>
   </section>
 

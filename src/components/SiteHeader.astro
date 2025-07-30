@@ -1,26 +1,61 @@
 ---
 const menu = [
-  { label: 'Home Loans', href: '/home-loans' },
-  { label: 'Calculators', href: '/calculators' },
-  { label: 'Guides', href: '/resources' },
-  { label: 'Blog', href: '/blog' },
+  { label: 'Home', href: '/' },
+  { label: 'Calculators', href: '/calculators', badge: 'Popular' },
+  { label: 'First Home Buyers', href: '/first-home-buyer-loans' },
+  { label: 'Refinancing', href: '/refinance-home-loan' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
 ];
 ---
-<header class="bg-white border-b-4 border-accent sticky top-0 z-50 shadow-sm">
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+  <!-- Top Bar -->
+  <div class="bg-primary text-white py-2">
+    <div class="max-w-7xl mx-auto px-6 flex justify-between items-center text-sm">
+      <div class="flex items-center gap-4">
+        <a href="tel:0733760823" class="hover:text-accent">📞 07 3376 0823</a>
+        <span class="hidden md:inline">|</span>
+        <span class="hidden md:inline">Award-Winning Mortgage Brokers Brisbane</span>
+      </div>
+      <a href="/free-assessment" class="hover:text-accent font-medium">
+        Get Free Assessment →
+      </a>
+    </div>
+  </div>
+  
+  <!-- Main Navigation -->
   <nav class="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
     <a href="/" class="inline-flex items-center gap-2">
-      <img src="/logo.svg" class="h-8 w-auto" alt="Hunter Galloway"/>
+      <img src="/logo.svg" class="h-10 w-auto" alt="Hunter Galloway"/>
     </a>
 
-    <ul class="hidden md:flex gap-6 font-bold tracking-wide">
+    <ul class="hidden lg:flex gap-8 font-medium">
       {menu.map(item => (
-        <li><a class="hover:text-accent2" href={item.href}>{item.label}</a></li>
+        <li class="relative">
+          <a class="hover:text-accent2 transition-colors" href={item.href}>
+            {item.label}
+            {item.badge && (
+              <span class="absolute -top-2 -right-8 bg-accent text-xs text-black px-2 py-0.5 rounded-full">
+                {item.badge}
+              </span>
+            )}
+          </a>
+        </li>
       ))}
     </ul>
 
-    <a href="/contact"
-       class="btn-primary hidden lg:inline-flex">Book a Call</a>
-
-    <!-- mobile burger (optional) -->
+    <div class="flex items-center gap-4">
+      <a href="/free-assessment"
+         class="btn-primary hidden md:inline-flex">
+        Free Assessment
+      </a>
+      
+      <!-- Mobile Menu Button -->
+      <button class="lg:hidden p-2" aria-label="Toggle menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
   </nav>
 </header>
