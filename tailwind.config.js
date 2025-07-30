@@ -4,11 +4,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary:  '#262626',   // dark text / overlay
-        accent:   '#fdb948',   // yellow CTA
-        accent2:  '#318ec3',   // link / secondary
-        neutral:  '#f9f9f9',   // light section bg
+        primary:  '#262626',   // dark gray text from CSS
+        accent:   '#fdb948',   // yellow CTA from original site
+        accent2:  '#318ec3',   // link / secondary  
+        neutral:  '#f4f4f4',   // light gray section bg
         border:   '#eeeeee',
+        yellow:   '#fdb948',   // alias for accent
       },
       fontFamily: {
         sans: ['"Gotham Pro"', 'Open Sans', 'sans-serif'],
