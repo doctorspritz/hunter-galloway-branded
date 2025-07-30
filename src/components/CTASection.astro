@@ -1,0 +1,70 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  buttonText?: string;
+  buttonHref?: string;
+  secondaryButtonText?: string;
+  secondaryButtonHref?: string;
+  backgroundColor?: 'accent' | 'neutral' | 'primary';
+  centered?: boolean;
+}
+
+const { 
+  title,
+  subtitle,
+  buttonText = "Get Started",
+  buttonHref = "/free-assessment",
+  secondaryButtonText,
+  secondaryButtonHref,
+  backgroundColor = 'accent',
+  centered = true
+} = Astro.props;
+
+const bgClass = {
+  accent: 'bg-accent/10 border-t-4 border-accent',
+  neutral: 'bg-neutral',
+  primary: 'bg-primary text-white'
+}[backgroundColor];
+
+const textClass = backgroundColor === 'primary' ? 'text-white' : 'text-primary';
+const subtitleClass = backgroundColor === 'primary' ? 'text-gray-200' : 'text-gray-600';
+---
+
+<section class={`py-16 ${bgClass}`}>
+  <div class="container max-w-4xl mx-auto px-4">
+    <div class={centered ? 'text-center' : ''}>
+      <h2 class={`text-3xl lg:text-4xl font-bold mb-4 ${textClass}`}>
+        {title}
+      </h2>
+      
+      {subtitle && (
+        <p class={`text-xl mb-8 max-w-2xl ${centered ? 'mx-auto' : ''} ${subtitleClass}`}>
+          {subtitle}
+        </p>
+      )}
+      
+      <div class={`flex flex-col sm:flex-row gap-4 ${centered ? 'justify-center' : ''}`}>
+        <a 
+          href={buttonHref}
+          class="inline-flex items-center justify-center bg-accent hover:bg-accent/90 text-black font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
+        >
+          {buttonText}
+        </a>
+        
+        {secondaryButtonText && secondaryButtonHref && (
+          <a 
+            href={secondaryButtonHref}
+            class={`inline-flex items-center justify-center border-2 font-semibold px-8 py-4 rounded-lg transition-colors text-lg ${
+              backgroundColor === 'primary' 
+                ? 'border-white text-white hover:bg-white hover:text-primary'
+                : 'border-accent2 text-accent2 hover:bg-accent2 hover:text-white'
+            }`}
+          >
+            {secondaryButtonText}
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

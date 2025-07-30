@@ -1,0 +1,67 @@
+---
+interface Stat {
+  value: string;
+  label: string;
+  description?: string;
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  stats: Stat[];
+  backgroundColor?: 'white' | 'neutral' | 'primary';
+}
+
+const { 
+  title,
+  subtitle,
+  stats,
+  backgroundColor = 'neutral'
+} = Astro.props;
+
+const bgClass = {
+  white: 'bg-white',
+  neutral: 'bg-neutral',
+  primary: 'bg-primary text-white'
+}[backgroundColor];
+
+const textClass = backgroundColor === 'primary' ? 'text-white' : 'text-primary';
+const valueClass = backgroundColor === 'primary' ? 'text-accent' : 'text-accent';
+---
+
+<section class={`py-16 ${bgClass}`}>
+  <div class="container max-w-6xl mx-auto px-4">
+    {(title || subtitle) && (
+      <div class="text-center mb-12">
+        {title && (
+          <h2 class={`text-3xl lg:text-4xl font-bold mb-4 ${textClass}`}>
+            {title}
+          </h2>
+        )}
+        {subtitle && (
+          <p class={`text-xl max-w-3xl mx-auto ${backgroundColor === 'primary' ? 'text-gray-200' : 'text-gray-600'}`}>
+            {subtitle}
+          </p>
+        )}
+      </div>
+    )}
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {stats.map(stat => (
+        <div class="text-center bg-white p-6 rounded-lg shadow-md">
+          <div class={`text-4xl lg:text-5xl font-bold mb-2 ${valueClass}`}>
+            {stat.value}
+          </div>
+          <div class="text-gray-600 font-medium mb-1">
+            {stat.label}
+          </div>
+          {stat.description && (
+            <div class="text-sm text-gray-500">
+              {stat.description}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

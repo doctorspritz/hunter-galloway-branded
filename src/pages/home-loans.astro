@@ -1,32 +1,106 @@
 ---
-import LoanLandingLayout from '../layouts/LoanLandingLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Hero from '../components/Hero.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import StatsSection from '../components/StatsSection.astro';
+import CTASection from '../components/CTASection.astro';
+import Awards from '../components/Awards.astro';
+
+const services = [
+  {
+    title: "First Home Buyers",
+    description: "Navigate your first home purchase confidently and stress-free with full guidance on each step.",
+    href: "/home-loans/first-home-buyers/",
+    icon: "🏠",
+    badge: "Most Popular",
+    image: "/images/pages/front/first-home.webp"
+  },
+  {
+    title: "Refinancing",
+    description: "Reduce your home loan repayments and achieve financial flexibility with better rates.",
+    href: "/home-loans/refinancing/",
+    icon: "🔄",
+    image: "/images/pages/front/refinance.webp"
+  },
+  {
+    title: "Investment Properties",
+    description: "Get expert mortgage solutions with personalized service and exclusive options for property investment.",
+    href: "/home-loans/investment-properties/",
+    icon: "📈",
+    image: "/images/pages/front/buy-luxury.webp"
+  },
+  {
+    title: "Upgrading Your Home",
+    description: "Transition smoothly from the sale of your current home to securing financing for your new home.",
+    href: "/home-loans/upgrading/",
+    icon: "⬆️",
+    image: "/images/pages/front/upgrade.webp"
+  },
+  {
+    title: "Professional Loans",
+    description: "Specialist rates and benefits for doctors, nurses, teachers and other qualified professionals.",
+    href: "/home-loans/professionals/",
+    icon: "👩‍⚕️",
+  },
+  {
+    title: "Specialty Loans",
+    description: "Guarantor loans, construction loans, and unique financing solutions for complex situations.",
+    href: "/home-loans/specialty/",
+    icon: "🔧",
+  }
+];
+
+const stats = [
+  { value: "97%", label: "Loan approval rate", description: "Highest in Australia" },
+  { value: "30+", label: "Banks & lenders", description: "Direct access panel" },
+  { value: "14", label: "Years experience", description: "Expert guidance" },
+  { value: "2,000+", label: "Happy customers", description: "5-star reviews" }
+];
 ---
 
-<LoanLandingLayout 
-  title="Home Loans Brisbane | Expert Mortgage Services"
+<BaseLayout 
+  title="Home Loans Brisbane | Expert Mortgage Services | Hunter Galloway"
   description="Find the perfect home loan with Hunter Galloway. First home buyers, refinancing, investment properties, and professional loan services across Brisbane."
 >
-  <main class="max-w-4xl mx-auto px-4 py-12">
-    <div class="prose prose-lg max-w-none">
-      
-      ## All Home Loan Services
-      
-      Whether you're a first home buyer, looking to refinance, or investing in property, our expert mortgage brokers will find you the perfect loan.
-      
-      ### Our Services
-      - **First Home Buyers** - Get into the market with confidence
-      - **Refinancing** - Lower your rate and save money  
-      - **Investment Properties** - Build your property portfolio
-      - **Professional Loans** - Specialist rates for doctors, nurses, teachers
-      - **Upgrading** - Move to your dream home
-      - **Specialty Loans** - Guarantor loans and unique situations
-      
-      ### Why Choose Hunter Galloway?
-      - Access to 30+ lenders
-      - No brokerage fees
-      - Award-winning service
-      - Highest approval rates in Australia
-      
+  <Fragment slot="header"><SiteHeader /></Fragment>
+  
+  <Hero 
+    title="Expert Home Loan Services"
+    subtitle="Whether you're a first home buyer, looking to refinance, or investing in property, our award-winning mortgage brokers will find you the perfect loan."
+    buttonText="Get Your Free Assessment"
+    badge="Award-Winning Service"
+  />
+  
+  <ServiceGrid 
+    title="Complete Home Loan Solutions"
+    subtitle="From first homes to investment properties, we've got you covered with expert guidance every step of the way."
+    services={services}
+    columns={3}
+  />
+  
+  <StatsSection 
+    title="Why Hunter Galloway is the Ultimate Choice"
+    stats={stats}
+  />
+  
+  <!-- Awards Section -->
+  <section class="py-12 bg-neutral">
+    <div class="container max-w-6xl mx-auto px-4">
+      <h2 class="text-center text-3xl font-bold text-primary mb-8">Award-Winning Excellence</h2>
+      <Awards />
     </div>
-  </main>
-</LoanLandingLayout>
+  </section>
+  
+  <CTASection 
+    title="Ready to Find Your Perfect Home Loan?"
+    subtitle="Our expert mortgage brokers are here to help you secure the right loan for your situation, with access to 30+ lenders and no brokerage fees."
+    buttonText="Get Free Assessment"
+    secondaryButtonText="Call Us Now"
+    secondaryButtonHref="tel:0733760823"
+    backgroundColor="accent"
+  />
+
+  <Fragment slot="footer"><SiteFooter /></Fragment>
+</BaseLayout>

@@ -1,0 +1,155 @@
+---
+interface Props {
+  title?: string;
+  subtitle?: string;
+  buttonText?: string;
+  className?: string;
+}
+
+const { 
+  title = "Get Your Free Assessment", 
+  subtitle = "Our expert brokers will review your situation and find the best loan options for you.",
+  buttonText = "Get Started",
+  className = ""
+} = Astro.props;
+---
+
+<div class={`contact-form bg-white p-6 rounded-lg shadow-lg ${className}`}>
+  <div class="mb-6">
+    <h3 class="text-xl font-bold text-primary mb-2">{title}</h3>
+    <p class="text-gray-600">{subtitle}</p>
+  </div>
+
+  <form 
+    name="contact" 
+    method="POST" 
+    data-netlify="true" 
+    data-netlify-honeypot="bot-field"
+    class="space-y-4"
+  >
+    <!-- Netlify form detection -->
+    <input type="hidden" name="form-name" value="contact" />
+    
+    <!-- Honeypot field for spam protection -->
+    <div style="display: none;">
+      <input name="bot-field" />
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4">
+      <div>
+        <label for="firstName" class="block text-sm font-medium text-gray-700 mb-2">
+          First Name *
+        </label>
+        <input 
+          type="text" 
+          id="firstName" 
+          name="firstName" 
+          required
+          class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+        />
+      </div>
+      
+      <div>
+        <label for="lastName" class="block text-sm font-medium text-gray-700 mb-2">
+          Last Name *
+        </label>
+        <input 
+          type="text" 
+          id="lastName" 
+          name="lastName" 
+          required
+          class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+        />
+      </div>
+    </div>
+
+    <div>
+      <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
+        Email *
+      </label>
+      <input 
+        type="email" 
+        id="email" 
+        name="email" 
+        required
+        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+      />
+    </div>
+
+    <div>
+      <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
+        Phone Number *
+      </label>
+      <input 
+        type="tel" 
+        id="phone" 
+        name="phone" 
+        required
+        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+      />
+    </div>
+
+    <div>
+      <label for="loanPurpose" class="block text-sm font-medium text-gray-700 mb-2">
+        What do you need a loan for?
+      </label>
+      <select 
+        id="loanPurpose" 
+        name="loanPurpose"
+        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+      >
+        <option value="">Select an option</option>
+        <option value="first-home">Buy my first home</option>
+        <option value="refinance">Refinance my loan</option>
+        <option value="upgrade">Upgrade my home</option>
+        <option value="investment">Investment property</option>
+        <option value="construction">Construction loan</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="propertyValue" class="block text-sm font-medium text-gray-700 mb-2">
+        Estimated Property Value
+      </label>
+      <select 
+        id="propertyValue" 
+        name="propertyValue"
+        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+      >
+        <option value="">Select a range</option>
+        <option value="under-500k">Under $500k</option>
+        <option value="500k-750k">$500k - $750k</option>
+        <option value="750k-1m">$750k - $1M</option>
+        <option value="1m-1.5m">$1M - $1.5M</option>
+        <option value="over-1.5m">Over $1.5M</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="message" class="block text-sm font-medium text-gray-700 mb-2">
+        Tell us about your situation
+      </label>
+      <textarea 
+        id="message" 
+        name="message" 
+        rows="4"
+        placeholder="Any additional details about your loan requirements..."
+        class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+      ></textarea>
+    </div>
+
+    <button 
+      type="submit"
+      class="w-full bg-accent hover:bg-accent/90 text-black font-semibold py-3 px-6 rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
+    >
+      {buttonText}
+    </button>
+
+    <p class="text-xs text-gray-500 text-center">
+      By submitting this form, you agree to our 
+      <a href="/privacy" class="text-accent2 hover:underline">Privacy Policy</a> 
+      and consent to being contacted about your home loan needs.
+    </p>
+  </form>
+</div>

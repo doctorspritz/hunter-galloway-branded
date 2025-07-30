@@ -1,0 +1,93 @@
+---
+interface Service {
+  title: string;
+  description: string;
+  href: string;
+  icon?: string;
+  badge?: string;
+  image?: string;
+}
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  services: Service[];
+  columns?: 2 | 3 | 4;
+}
+
+const { 
+  title, 
+  subtitle, 
+  services, 
+  columns = 3 
+} = Astro.props;
+
+const gridClass = {
+  2: 'md:grid-cols-2',
+  3: 'md:grid-cols-2 lg:grid-cols-3', 
+  4: 'md:grid-cols-2 lg:grid-cols-4'
+}[columns];
+---
+
+<section class="py-16 bg-white">
+  <div class="container max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+        {title}
+      </h2>
+      {subtitle && (
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          {subtitle}
+        </p>
+      )}
+    </div>
+    
+    <div class={`grid gap-6 ${gridClass}`}>
+      {services.map(service => (
+        <a 
+          href={service.href}
+          class="group relative bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-accent"
+        >
+          {service.badge && (
+            <div class="absolute top-4 left-4 bg-accent text-black px-3 py-1 rounded-full text-sm font-semibold z-10">
+              {service.badge}
+            </div>
+          )}
+          
+          {service.image && (
+            <div class="h-48 overflow-hidden">
+              <img 
+                src={service.image} 
+                alt={service.title}
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                loading="lazy"
+              />
+            </div>
+          )}
+          
+          <div class="p-6">
+            <div class="flex items-start gap-3 mb-3">
+              {service.icon && (
+                <span class="text-2xl flex-shrink-0">{service.icon}</span>
+              )}
+              <h3 class="text-xl font-bold text-primary group-hover:text-accent2 transition-colors">
+                {service.title}
+              </h3>
+            </div>
+            
+            <p class="text-gray-600 leading-relaxed mb-4">
+              {service.description}
+            </p>
+            
+            <div class="flex items-center text-accent2 font-semibold group-hover:text-accent transition-colors">
+              Learn More 
+              <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

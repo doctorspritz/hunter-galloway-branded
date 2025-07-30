@@ -1,35 +1,168 @@
 ---
-import GenericPageLayout from '../layouts/GenericPageLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Hero from '../components/Hero.astro';
+import ServiceGrid from '../components/ServiceGrid.astro';
+import StatsSection from '../components/StatsSection.astro';
+import CTASection from '../components/CTASection.astro';
+
+const services = [
+  {
+    title: "Brisbane - Our Home Base",
+    description: "Award-winning service with the highest approval rates in Queensland. Brisbane's #1 mortgage broker.",
+    href: "/mortgage-brokers/brisbane/",
+    icon: "⭐️",
+    badge: "#1 Broker"
+  },
+  {
+    title: "Gold Coast",
+    description: "Expert local knowledge of the Gold Coast property market with personalized service.",
+    href: "/mortgage-brokers/gold-coast/",
+    icon: "🏖️"
+  },
+  {
+    title: "Sunshine Coast",
+    description: "Specialized mortgage services for the beautiful Sunshine Coast region.",
+    href: "/mortgage-brokers/sunshine-coast/",
+    icon: "☀️"
+  },
+  {
+    title: "Regional Queensland",
+    description: "Servicing regional Queensland with local market expertise and lender relationships.",
+    href: "/mortgage-brokers/regional-qld/",
+    icon: "🌾"
+  },
+  {
+    title: "Sydney & NSW",
+    description: "Comprehensive mortgage services across New South Wales with local expertise.",
+    href: "/mortgage-brokers/sydney/",
+    icon: "🌉"
+  },
+  {
+    title: "Melbourne & VIC",
+    description: "Expert mortgage broking services throughout Victoria and Melbourne metro.",
+    href: "/mortgage-brokers/melbourne/",
+    icon: "🏙️"
+  }
+];
+
+const stats = [
+  { value: "97%", label: "Approval success rate", description: "Highest in Australia" },
+  { value: "30+", label: "Lender relationships", description: "Direct access panel" },
+  { value: "14", label: "Years local experience", description: "Market expertise" },
+  { value: "100%", label: "Local knowledge", description: "Personalized service" }
+];
+
+const whyLocalMatters = [
+  {
+    title: "Market-Specific Knowledge",
+    description: "Deep understanding of local property markets, pricing trends, and growth areas.",
+    icon: "📍"
+  },
+  {
+    title: "Local Lender Relationships",
+    description: "Direct connections with decision makers at banks and credit unions in your area.",
+    icon: "🤝"
+  },
+  {
+    title: "Regional Property Expertise",
+    description: "Understanding of council requirements, zoning, and local property regulations.",
+    icon: "🏘️"
+  },
+  {
+    title: "Personalized Service",
+    description: "Face-to-face meetings, local support, and understanding of your community.",
+    icon: "👥"
+  }
+];
 ---
 
-<GenericPageLayout 
-  title="Mortgage Brokers | Local Service Across Australia"
-  description="Expert mortgage brokers providing personalized service across Australia. Find your local Hunter Galloway broker today."
+<BaseLayout 
+  title="Local Mortgage Brokers | Expert Service Across Australia | Hunter Galloway"
+  description="Expert mortgage brokers providing personalized service across Australia. Find your local Hunter Galloway broker with specialized market knowledge."
 >
-  <main class="max-w-4xl mx-auto px-4 py-12">
-    <div class="prose prose-lg max-w-none">
+  <Fragment slot="header"><SiteHeader /></Fragment>
+  
+  <Hero 
+    title="Local Mortgage Broker Services"
+    subtitle="Expert mortgage broking with specialized local knowledge across Australia. Personalized service that understands your market."
+    buttonText="Find Your Local Broker"
+    badge="Local Expertise"
+  />
+  
+  <ServiceGrid 
+    title="Our Service Areas"
+    subtitle="Comprehensive mortgage services across Australia, with specialized local knowledge in every market we serve."
+    services={services}
+    columns={3}
+  />
+  
+  <section class="py-16 bg-neutral">
+    <div class="container max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+          Why Local Expertise Matters
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Local knowledge makes all the difference when securing your home loan. Our brokers understand your market inside and out.
+        </p>
+      </div>
       
-      ## Local Mortgage Broker Services
-      
-      Hunter Galloway provides expert mortgage broker services across Australia, with specialized local knowledge in every market.
-      
-      ### Brisbane - Our Home Base ⭐️
-      **[Get started with Brisbane's #1 mortgage broker](/mortgage-brokers/brisbane/)**
-      
-      Brisbane is our specialty, with award-winning service and the highest approval rates in Queensland.
-      
-      ### Service Areas
-      - **Queensland** - Brisbane, Gold Coast, Sunshine Coast
-      - **New South Wales** - Sydney and surrounding areas
-      - **Victoria** - Melbourne metro and regional
-      - **Western Australia** - Perth and surrounds
-      
-      ### Why Local Matters
-      - Market-specific knowledge
-      - Local lender relationships  
-      - Understanding of regional property markets
-      - Personalized service in your area
-      
+      <div class="grid md:grid-cols-2 gap-8">
+        {whyLocalMatters.map(feature => (
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="flex items-start gap-4">
+              <span class="text-3xl flex-shrink-0">{feature.icon}</span>
+              <div>
+                <h3 class="text-xl font-bold text-primary mb-2">{feature.title}</h3>
+                <p class="text-gray-600">{feature.description}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
-  </main>
-</GenericPageLayout>
+  </section>
+  
+  <StatsSection 
+    title="Local Expertise, National Reach"
+    subtitle="Combining deep local market knowledge with access to Australia's largest lender panel."
+    stats={stats}
+    backgroundColor="white"
+  />
+  
+  <!-- Brisbane Highlight -->
+  <section class="py-16 bg-accent/10 border-t-4 border-accent">
+    <div class="container max-w-6xl mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="flex items-center justify-center gap-2 mb-6">
+          <span class="text-3xl">⭐️</span>
+          <h2 class="text-3xl lg:text-4xl font-bold text-primary">Brisbane's #1 Mortgage Broker</h2>
+          <span class="text-3xl">⭐️</span>
+        </div>
+        <p class="text-xl text-gray-600 mb-8">
+          Hunter Galloway is Brisbane's top-rated mortgage broker with the highest approval rates in Queensland. 
+          Our Brisbane office is our home base, where it all started.
+        </p>
+        <a 
+          href="/mortgage-brokers/brisbane/" 
+          class="inline-flex items-center bg-accent hover:bg-accent/90 text-black font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
+        >
+          Get Brisbane's Best Service →
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <CTASection 
+    title="Ready to Work with Your Local Expert?"
+    subtitle="Find your local Hunter Galloway mortgage broker and experience the difference that local expertise makes."
+    buttonText="Get Free Assessment"
+    secondaryButtonText="Call Us Now"
+    secondaryButtonHref="tel:0733760823"
+    backgroundColor="primary"
+  />
+
+  <Fragment slot="footer"><SiteFooter /></Fragment>
+</BaseLayout>
