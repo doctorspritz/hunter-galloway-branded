@@ -6,7 +6,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 export interface Props {
   title: string;
   description: string;
-  publishDate: Date;
+  publishDate: string | Date;
   category?: string;
   author?: string;
   image?: string;
@@ -44,8 +44,8 @@ const { title, description, publishDate, category, author, image } = Astro.props
       )}
       
       <div class="flex items-center gap-4 text-sm text-gray-500 mb-4">
-        <time datetime={publishDate.toISOString()}>
-          {publishDate.toLocaleDateString('en-AU', { 
+        <time datetime={publishDate instanceof Date ? publishDate.toISOString() : publishDate}>
+          {(publishDate instanceof Date ? publishDate : new Date(publishDate)).toLocaleDateString('en-AU', { 
             day: 'numeric', 
             month: 'long', 
             year: 'numeric' 

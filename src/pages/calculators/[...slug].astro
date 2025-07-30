@@ -1,0 +1,35 @@
+---
+import { getCollection, render } from 'astro:content';
+import CalculatorLayout from '../../layouts/CalculatorLayout.astro';
+
+export async function getStaticPaths() {
+  const calculatorsPages = await getCollection('calculators');
+  
+  return calculatorsPages.map((page) => ({
+    params: { slug: page.id },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+---
+
+<CalculatorLayout 
+  title={page.data.title}
+  description={page.data.description}
+>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div class="prose prose-lg max-w-none">
+      <Content />
+    </div>
+    
+    {page.data.interactive && (
+      <div class="mt-8 p-6 bg-primary/5 rounded-lg">
+        <h3 class="text-lg font-semibold mb-2">📊 Interactive Calculator</h3>
+        <p>Use our free calculator below to get instant results, or contact us for personalized advice.</p>
+        <!-- Calculator component would go here -->
+      </div>
+    )}
+  </main>
+</CalculatorLayout>

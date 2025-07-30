@@ -1,0 +1,32 @@
+---
+import { getCollection, render } from 'astro:content';
+import LoanLandingLayout from '../../layouts/LoanLandingLayout.astro';
+import GuideLayout from '../../layouts/GuideLayout.astro';
+
+export async function getStaticPaths() {
+  const homeLoansPages = await getCollection('home-loans');
+  
+  return homeLoansPages.map((page) => ({
+    params: { slug: page.id },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+
+// Determine layout based on content type
+const isGuide = page.id.includes('getting-started') || page.id.includes('index');
+const Layout = isGuide ? GuideLayout : LoanLandingLayout;
+---
+
+<Layout 
+  title={page.data.title}
+  description={page.data.description}
+>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div class="prose prose-lg max-w-none">
+      <Content />
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,37 @@
+---
+import { getCollection, render } from 'astro:content';
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import BlogPostLayout from '../../layouts/BlogPostLayout.astro';
+
+export async function getStaticPaths() {
+  const bestSuburbsPages = await getCollection('best-suburbs');
+  
+  return bestSuburbsPages.map((page) => ({
+    params: { slug: page.id },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+
+// Use BlogPostLayout for hotspots, GuideLayout for others
+const Layout = page.data.contentType === 'hotspots' ? BlogPostLayout : GuideLayout;
+---
+
+<Layout 
+  title={page.data.title}
+  description={page.data.description}
+>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    <div class="prose prose-lg max-w-none">
+      <Content />
+    </div>
+    
+    <div class="mt-8 p-6 bg-neutral rounded-lg">
+      <h3 class="text-lg font-semibold mb-2">🏡 Need Local Finance Advice?</h3>
+      <p>Our {page.data.location.city ? page.data.location.city + ' ' : ''}mortgage brokers understand the local market. 
+         Get expert advice on financing your purchase in this area.</p>
+    </div>
+  </main>
+</Layout>

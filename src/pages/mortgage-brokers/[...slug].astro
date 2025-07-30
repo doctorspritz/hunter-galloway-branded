@@ -1,0 +1,44 @@
+---
+import { getCollection, render } from 'astro:content';
+import LoanLandingLayout from '../../layouts/LoanLandingLayout.astro';
+
+export async function getStaticPaths() {
+  const mortgageBrokersPages = await getCollection('mortgage-brokers');
+  
+  return mortgageBrokersPages.map((page) => ({
+    params: { slug: page.id },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+
+// Special styling for the TOP MONEY PAGE
+const isMoneyPage = page.data.isMoneyPage;
+---
+
+<LoanLandingLayout 
+  title={page.data.title}
+  description={page.data.description}
+>
+  <main class="max-w-4xl mx-auto px-4 py-12">
+    {isMoneyPage && (
+      <div class="bg-accent/10 border-l-4 border-accent p-4 mb-8">
+        <p class="text-accent font-semibold">⭐️ Brisbane's #1 Mortgage Broker</p>
+      </div>
+    )}
+    
+    <div class="prose prose-lg max-w-none">
+      <Content />
+    </div>
+    
+    {page.data.location.suburb && (
+      <div class="mt-8 p-6 bg-neutral rounded-lg">
+        <h3 class="text-xl font-semibold mb-2">Local Service in {page.data.location.suburb}</h3>
+        <p>Hunter Galloway provides expert mortgage broker services in {page.data.location.suburb}, Brisbane. 
+           Contact us today for personalized home loan assistance.</p>
+      </div>
+    )}
+  </main>
+</LoanLandingLayout>

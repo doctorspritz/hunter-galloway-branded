@@ -1,0 +1,373 @@
+[
+  {
+    "name": "Pay your house deposit",
+    "url": "/pay-your-house-deposit",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Sign the contract of sale",
+    "url": "/sign-the-contract-of-sale",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Be prepared to walk away",
+    "url": "/be-prepared-to-walk-away",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Take it slow when bidding",
+    "url": "/take-it-slow-when-bidding",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Don’t tell the agent much",
+    "url": "/dont-tell-the-agent-much",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Know your competition",
+    "url": "/know-your-competition",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Have your support team ready",
+    "url": "/have-your-support-team-ready",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Have your finance sorted",
+    "url": "/have-your-finance-sorted",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Know the property’s value",
+    "url": "/know-the-propertys-value",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Understand the auction mindset",
+    "url": "/understand-the-auction-mindset",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Be ready to walk away",
+    "url": "/be-ready-to-walk-away",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Negotiating house price after building inspection",
+    "url": "/negotiating-house-price-after-building-inspection",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Prepare your counter offer",
+    "url": "/prepare-your-counter-offer",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Making your first offer",
+    "url": "/making-your-first-offer",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Ask open-ended “What?” And “How?” questions",
+    "url": "/ask-open-ended-what-and-how-questions",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Negotiation fundamentals",
+    "url": "/negotiation-fundamentals",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Have confidence with your research and finances",
+    "url": "/have-confidence-with-your-research-and-finances",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Warning Real estate agents aren’t your friend",
+    "url": "/warning-real-estate-agents-arent-your-friend",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Research the History of Your Home",
+    "url": "/research-the-history-of-your-home",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Research your suburb and surrounding area",
+    "url": "/research-your-suburb-and-surrounding-area",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Check commute times",
+    "url": "/check-commute-times",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Be flood aware",
+    "url": "/be-flood-aware",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Building and pest reports are essential",
+    "url": "/building-and-pest-reports-are-essential",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Avoid these common mistakes",
+    "url": "/avoid-these-common-mistakes",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Research Rental Income Per Week",
+    "url": "/research-rental-income-per-week",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Research Similar Property Sales",
+    "url": "/research-similar-property-sales",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Observe the market",
+    "url": "/observe-the-market",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Categorise the properties as inferior and superior",
+    "url": "/categorise-the-properties-as-inferior-and-superior",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Compare apples with apples",
+    "url": "/compare-apples-with-apples",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Set up your search for prosperity",
+    "url": "/set-up-your-search-for-success",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Don’t limit your search",
+    "url": "/dont-limit-your-search",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Keep emotion out of it",
+    "url": "/keep-emotion-out-of-it",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Start with why",
+    "url": "/start-with-why",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Get the right home",
+    "url": "/for-you",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Your first home doesn’t have to be your forever home",
+    "url": "/your-first-home-doesnt-have-to-be-your-forever-home",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Rent Money isn’t dead money",
+    "url": "/rent-money-isnt-dead-money",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Time in the market vs. timing the market",
+    "url": "/time-in-the-market-vs-timing-the-market",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "When is the right time?",
+    "url": "/when-is-the-right-time",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Assess your situation",
+    "url": "/assess-your-situation",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Set up your search for success",
+    "url": "/set-up-your-search-for-success",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Get the right home loan",
+    "url": "/get-the-right-home-loan",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Buy at the right time",
+    "url": "/buy-right-time",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "The true costs of buying a home",
+    "url": "/cost-of-buying-a-home",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "First Home Buyer Loans",
+    "url": "/first-home-buyer-loans-old",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Paddington Mortgage Brokers",
+    "url": "/paddington-mortgage-brokers",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Specialist Mortgage Lenders",
+    "url": "/specialist-mortgage-lenders",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Should you turn your home into an investment property?",
+    "url": "/home-or-investment-property",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Property investor wanting to grow a portfolio?",
+    "url": "/property-investor-portfolio",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Home loans without the hassle",
+    "url": "/home-loans-without-hassle",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "First Home Buyer Loans",
+    "url": "/first-home-buyer-loans-2",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Home Loans for Doctors",
+    "url": "/home-loans-for-doctors-old",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Hunter Galloway Mortgage Brokers",
+    "url": "/hunter-galloway-mortgage-brokers-2-2-2",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  },
+  {
+    "name": "Unique Employment Loan",
+    "url": "/unusual-employment-loan",
+    "reason": "No pattern match found",
+    "suggestedPath": "/resources/",
+    "layout": "GenericPageLayout"
+  }
+]

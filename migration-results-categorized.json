@@ -1,0 +1,830 @@
+[
+  {
+    "name": "Mortgage Broker Bracken Ridge",
+    "originalUrl": "/mortgage-broker-bracken-ridge",
+    "newPath": "/mortgage-brokers/brisbane/bracken-ridge/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Toowong",
+    "originalUrl": "/mortgage-broker-toowong",
+    "newPath": "/mortgage-brokers/brisbane/toowong/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Auchenflower",
+    "originalUrl": "/mortgage-broker-auchenflower",
+    "newPath": "/mortgage-brokers/brisbane/auchenflower/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Acacia Ridge",
+    "originalUrl": "/mortgage-broker-acacia-ridge",
+    "newPath": "/mortgage-brokers/brisbane/acacia-ridge/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Albion",
+    "originalUrl": "/mortgage-broker-albion",
+    "newPath": "/mortgage-brokers/brisbane/albion/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Alderley",
+    "originalUrl": "/mortgage-broker-alderley",
+    "newPath": "/mortgage-brokers/brisbane/alderley/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Algester",
+    "originalUrl": "/mortgage-broker-algester",
+    "newPath": "/mortgage-brokers/brisbane/algester/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Annerley",
+    "originalUrl": "/mortgage-broker-annerley",
+    "newPath": "/mortgage-brokers/brisbane/annerley/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Anstead",
+    "originalUrl": "/mortgage-broker-anstead",
+    "newPath": "/mortgage-brokers/brisbane/anstead/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Archerfield",
+    "originalUrl": "/mortgage-broker-archerfield",
+    "newPath": "/mortgage-brokers/brisbane/archerfield/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Ascot",
+    "originalUrl": "/mortgage-broker-ascot",
+    "newPath": "/mortgage-brokers/brisbane/ascot/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Ashgrove",
+    "originalUrl": "/mortgage-broker-ashgrove",
+    "newPath": "/mortgage-brokers/brisbane/ashgrove/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Taringa",
+    "originalUrl": "/mortgage-broker-taringa",
+    "newPath": "/mortgage-brokers/brisbane/taringa/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Aspley",
+    "originalUrl": "/mortgage-broker-aspley",
+    "newPath": "/mortgage-brokers/brisbane/aspley/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Lower Your Rate and Reduce Your Payments Now",
+    "originalUrl": "/lower-your-rate",
+    "newPath": "/home-loans/refinancing/lower-rates/",
+    "layout": "GuideLayout",
+    "category": "home-loans",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Your Property Investment Journey Starts Here",
+    "originalUrl": "/your-property-investment-journey",
+    "newPath": "/home-loans/investment-properties/getting-started/",
+    "layout": "GuideLayout",
+    "category": "home-loans",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Ready to Upgrade? We Make Financing Simple",
+    "originalUrl": "/ready-to-upgrade",
+    "newPath": "/home-loans/upgrading/",
+    "layout": "LoanLandingLayout",
+    "category": "home-loans",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Get a stress-free first home loan with 0% brokerage fee",
+    "originalUrl": "/get-a-stress-free-first-home-loan",
+    "newPath": "/home-loans/first-home-buyers/getting-started/",
+    "layout": "GuideLayout",
+    "category": "home-loans",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Bardon",
+    "originalUrl": "/mortgage-broker-bardon",
+    "newPath": "/mortgage-brokers/brisbane/bardon/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Kelvin Grove",
+    "originalUrl": "/mortgage-broker-kelvin-grove",
+    "newPath": "/mortgage-brokers/brisbane/kelvin-grove/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Milton",
+    "originalUrl": "/mortgage-broker-milton",
+    "newPath": "/mortgage-brokers/brisbane/milton/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Red Hill",
+    "originalUrl": "/mortgage-broker-red-hill",
+    "newPath": "/mortgage-brokers/brisbane/red-hill/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Paddington",
+    "originalUrl": "/mortgage-broker-paddington",
+    "newPath": "/mortgage-brokers/brisbane/paddington/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Brisbane",
+    "originalUrl": "/mortgage-broker-brisbane",
+    "newPath": "/mortgage-brokers/brisbane/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Kiwi First Home Buyers",
+    "originalUrl": "/kiwi-first-home-buyers",
+    "newPath": "/home-loans/first-home-buyers/kiwi-buyers/",
+    "layout": "LoanLandingLayout",
+    "category": "home-loans",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Nurses &#038; Midwives",
+    "originalUrl": "/nurses-midwives",
+    "newPath": "/home-loans/professionals/nurses/",
+    "layout": "LoanLandingLayout",
+    "category": "home-loans",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Teachers",
+    "originalUrl": "/teachers",
+    "newPath": "/home-loans/professionals/teachers/",
+    "layout": "LoanLandingLayout",
+    "category": "home-loans",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Guarantor Home Loans",
+    "originalUrl": "/guarantor-home-loan",
+    "newPath": "/home-loans/specialty/guarantor-loans/",
+    "layout": "LoanLandingLayout",
+    "category": "home-loans",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Get Free Assessment",
+    "originalUrl": "/get-free-assessment",
+    "newPath": "/contact/",
+    "layout": "GenericPageLayout",
+    "category": "company",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Risk Insurance",
+    "originalUrl": "/risk-insurance",
+    "newPath": "/home-loans/specialty/insurance/",
+    "layout": "LoanLandingLayout",
+    "category": "home-loans",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Perth",
+    "originalUrl": "/mortgage-broker-perth",
+    "newPath": "/mortgage-brokers/brisbane/perth/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Nurse Home Loan",
+    "originalUrl": "/nurse-home-loan",
+    "newPath": "/home-loans/professionals/nurses/",
+    "layout": "LoanLandingLayout",
+    "category": "home-loans",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Join Location Genius",
+    "originalUrl": "/join-location-genius",
+    "newPath": "/resources/tools/location-genius/",
+    "layout": "GenericPageLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Top 5 Hot Spots in QLD",
+    "originalUrl": "/top-5-hot-spots-in-qld",
+    "newPath": "/best-suburbs/australia/queensland/hot-spots/",
+    "layout": "BlogPostLayout",
+    "category": "best-suburbs",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Upgrade my home",
+    "originalUrl": "/upgrade-my-home",
+    "newPath": "/home-loans/upgrading/",
+    "layout": "LoanLandingLayout",
+    "category": "home-loans",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "First home buyer loans",
+    "originalUrl": "/first-home-buyer-loans",
+    "newPath": "/home-loans/first-home-buyers/",
+    "layout": "LoanLandingLayout",
+    "category": "home-loans",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "YouTube Disclaimer",
+    "originalUrl": "/youtube-disclaimer",
+    "newPath": "/legal/youtube-disclaimer/",
+    "layout": "GenericPageLayout",
+    "category": "company",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Report",
+    "originalUrl": "/mortgage-report",
+    "newPath": "/resources/tools/mortgage-report/",
+    "layout": "GenericPageLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Contact",
+    "originalUrl": "/contact",
+    "newPath": "/contact/",
+    "layout": "GenericPageLayout",
+    "category": "company",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Brisbane",
+    "originalUrl": "/mortgage-broker-brisbane-old",
+    "newPath": "/mortgage-brokers/brisbane/brisbane-old/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Home Loans Brisbane",
+    "originalUrl": "/home-loans-brisbane",
+    "newPath": "/home-loans/",
+    "layout": "LoanLandingLayout",
+    "category": "home-loans",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "First Home Buyers Grant",
+    "originalUrl": "/queensland-first-home-buyers-grant",
+    "newPath": "/resources/blog/grants-schemes/qld-first-home-grant/",
+    "layout": "BlogPostLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "District",
+    "originalUrl": "/suburbs-in-brisbane",
+    "newPath": "/best-suburbs/australia/queensland/brisbane/",
+    "layout": "GuideLayout",
+    "category": "best-suburbs",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Map Page",
+    "originalUrl": "/suburbs-map",
+    "newPath": "/best-suburbs/australia/queensland/brisbane/map/",
+    "layout": "GenericPageLayout",
+    "category": "best-suburbs",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Who We Help",
+    "originalUrl": "/who-we-help",
+    "newPath": "/about/who-we-help/",
+    "layout": "GenericPageLayout",
+    "category": "company",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Pay your own mortgage instead of someome else’s!",
+    "originalUrl": "/mortgage-vs-rent-calculator",
+    "newPath": "/calculators/mortgage-vs-rent/",
+    "layout": "CalculatorLayout",
+    "category": "calculators",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Our Team",
+    "originalUrl": "/our-team",
+    "newPath": "/about/our-team/",
+    "layout": "GenericPageLayout",
+    "category": "company",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage calculator",
+    "originalUrl": "/mortgage-calculator",
+    "newPath": "/calculators/mortgage-calculator/",
+    "layout": "CalculatorLayout",
+    "category": "calculators",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "First Home Buyer Tools",
+    "originalUrl": "/tools",
+    "newPath": "/calculators/",
+    "layout": "GenericPageLayout",
+    "category": "calculators",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Thank you!",
+    "originalUrl": "/thank-you-2",
+    "newPath": "/thank-you/",
+    "layout": "GenericPageLayout",
+    "category": "company",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Unfortunately you need at least 8% deposit",
+    "originalUrl": "/you-need-at-least-8-deposit",
+    "newPath": "/calculators/results/deposit-required/",
+    "layout": "GenericPageLayout",
+    "category": "calculators",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "You’re eligible for a loan!",
+    "originalUrl": "/youre-eligible-for-a-loan",
+    "newPath": "/calculators/results/eligible/",
+    "layout": "GenericPageLayout",
+    "category": "calculators",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Are you actually ready to buy  your first home?",
+    "originalUrl": "/are-you-actually-ready-to-buy-your-first-home",
+    "newPath": "/resources/blog/first-home-buyers/readiness-guide/",
+    "layout": "BlogPostLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "21 [easy] tips to Find the Best Mortgage Broker in Brisbane 🏡",
+    "originalUrl": "/best-mortgage-broker-brisbane",
+    "newPath": "/resources/blog/guides/choosing-a-broker/",
+    "layout": "BlogPostLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Refinance Home Loan",
+    "originalUrl": "/refinance-home-loan",
+    "newPath": "/home-loans/refinancing/",
+    "layout": "LoanLandingLayout",
+    "category": "home-loans",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Home Loans For Doctors | 100% NO LMI + Discounts | Medico Loans",
+    "originalUrl": "/home-loans-for-doctors",
+    "newPath": "/home-loans/professionals/doctors/",
+    "layout": "LoanLandingLayout",
+    "category": "home-loans",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Mortgage Broker Brisbane",
+    "originalUrl": "/mortgage-broker-brisbane-a",
+    "newPath": "/mortgage-brokers/brisbane/brisbane-a/",
+    "layout": "LoanLandingLayout",
+    "category": "mortgage-brokers",
+    "matchType": "pattern",
+    "status": "existing"
+  },
+  {
+    "name": "Thank you for your referral",
+    "originalUrl": "/thank-you-referral",
+    "newPath": "/thank-you-referral/",
+    "layout": "GenericPageLayout",
+    "category": "company",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "First Home Buyer Hub",
+    "originalUrl": "/hub",
+    "newPath": "/resources/guides/buying-process/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Finish settlement",
+    "originalUrl": "/finalise-settlement",
+    "newPath": "/resources/guides/buying-process/settlement/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Settlement and getting your keys",
+    "originalUrl": "/settlement-and-getting-your-keys",
+    "newPath": "/resources/guides/buying-process/settlement/getting-keys/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Get the power connected &#038; mail redirected",
+    "originalUrl": "/get-the-power-connected-mail-redirected",
+    "newPath": "/resources/guides/buying-process/settlement/utilities/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Sign your loan documents",
+    "originalUrl": "/sign-your-loan-documents",
+    "newPath": "/resources/guides/buying-process/loan-approval/signing-documents/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Arrange building &#038; pest inspection",
+    "originalUrl": "/arrange-building-pest-inspection",
+    "newPath": "/resources/guides/buying-process/inspections/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Get insurance right away",
+    "originalUrl": "/get-insurance-right-away",
+    "newPath": "/resources/guides/buying-process/insurance/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Get formal approval",
+    "originalUrl": "/get-formal-approval",
+    "newPath": "/resources/guides/buying-process/loan-approval/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "11 point Auction bidding checklist",
+    "originalUrl": "/11-point-auction-bidding-checklist",
+    "newPath": "/resources/guides/buying-process/auctions/bidding-checklist/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Buying a home",
+    "originalUrl": "/buying-a-home",
+    "newPath": "/resources/guides/buying-process/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Do your research",
+    "originalUrl": "/do-your-research",
+    "newPath": "/resources/guides/buying-process/research/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Worth definitely",
+    "originalUrl": "/value-accurately",
+    "newPath": "/resources/guides/buying-process/property-valuation/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Questions to ask your mortgage broker",
+    "originalUrl": "/questions",
+    "newPath": "/resources/guides/loan-process/broker-questions/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Getting your home loan declined isn’t the end of the world",
+    "originalUrl": "/declined",
+    "newPath": "/resources/guides/loan-process/loan-declined/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Why you should get a preapproval",
+    "originalUrl": "/preapproval",
+    "newPath": "/resources/guides/loan-process/pre-approval/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Choose the right home loan",
+    "originalUrl": "/choice",
+    "newPath": "/resources/guides/loan-types/choosing-right-loan/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Finalise settlement",
+    "originalUrl": "/finalise-settlement",
+    "newPath": "/resources/guides/buying-process/settlement/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Buy at Auction",
+    "originalUrl": "/buy-at-auction",
+    "newPath": "/resources/guides/buying-process/auctions/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Make an offer",
+    "originalUrl": "/make-an-offer",
+    "newPath": "/resources/guides/buying-process/making-offers/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Buying your Home &#8211; Do your research",
+    "originalUrl": "/do-your-research",
+    "newPath": "/resources/guides/buying-process/research/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Value Accurately",
+    "originalUrl": "/value-accurately",
+    "newPath": "/resources/guides/buying-process/property-valuation/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "How much deposit do I need?",
+    "originalUrl": "/deposit",
+    "newPath": "/resources/guides/getting-started/deposit-requirements/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Maximise your borrowing power",
+    "originalUrl": "/borrowing-power",
+    "newPath": "/calculators/borrowing-capacity/",
+    "layout": "CalculatorLayout",
+    "category": "calculators",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Understand LVR, LMI and Genuine Savings",
+    "originalUrl": "/finance-basics",
+    "newPath": "/resources/guides/loan-types/finance-basics/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Home Buying Resources",
+    "originalUrl": "/resources",
+    "newPath": "/resources/",
+    "layout": "GenericPageLayout",
+    "category": "company",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "What can I afford to pay for my first home?",
+    "originalUrl": "/what-can-i-afford",
+    "newPath": "/resources/guides/getting-started/affordability/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Know Your Budget",
+    "originalUrl": "/know-your-budget",
+    "newPath": "/resources/guides/getting-started/budgeting/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Refer a Friend",
+    "originalUrl": "/refer-a-friend",
+    "newPath": "/refer-a-friend/",
+    "layout": "GenericPageLayout",
+    "category": "company",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Home Equity Loan",
+    "originalUrl": "/home-equity-loan",
+    "newPath": "/resources/guides/loan-types/home-equity/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Basic Home Loan",
+    "originalUrl": "/basic-home-loan",
+    "newPath": "/resources/guides/loan-types/basic-home-loan/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Line of Credit",
+    "originalUrl": "/line-of-credit",
+    "newPath": "/resources/guides/loan-types/line-of-credit/",
+    "layout": "GuideLayout",
+    "category": "resources",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Sitemap",
+    "originalUrl": "/sitemap",
+    "newPath": "/sitemap/",
+    "layout": "GenericPageLayout",
+    "category": "company",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Book A Free Assessment",
+    "originalUrl": "/free-assessment",
+    "newPath": "/contact/",
+    "layout": "GenericPageLayout",
+    "category": "company",
+    "matchType": "exact",
+    "status": "existing"
+  },
+  {
+    "name": "Investment Property Loans",
+    "originalUrl": "/investment-loans-queensland",
+    "newPath": "/home-loans/investment-properties/",
+    "layout": "LoanLandingLayout",
+    "category": "home-loans",
+    "matchType": "exact",
+    "status": "existing"
+  }
+]
