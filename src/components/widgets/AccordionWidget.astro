@@ -1,0 +1,192 @@
+---
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title?: string;
+  faqs: FAQItem[];
+  buttonText?: string;
+  buttonHref?: string;
+  className?: string;
+}
+
+const { 
+  title = "Questions and Answers",
+  faqs,
+  buttonText = "Contact us",
+  buttonHref = "/contact",
+  className = ""
+} = Astro.props;
+---
+
+<section class={`accordion_widget widget ${className}`}>
+  <div class="container max-w-4xl mx-auto px-4 py-16">
+    <div class="inner_widget">
+      <h2 class="inner_title text-3xl lg:text-4xl font-bold text-primary text-center mb-12">
+        {title}
+      </h2>
+      
+      <div class="accordion_holder space-y-4">
+        {faqs.map((faq, index) => (
+          <div class="et_pb_module et_pb_toggle et_pb_toggle_close" data-accordion-item={index}>
+            <h5 class="et_pb_toggle_title flex justify-between items-center w-full p-6 bg-white border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors">
+              <span class="text-lg font-semibold text-primary">{faq.question}</span>
+              <svg class="accordion-icon w-6 h-6 text-gray-400 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </h5>
+            <div class="et_pb_toggle_content clearfix hidden">
+              <div class="p-6 pt-0 bg-white border-x border-b border-gray-200 rounded-b-lg">
+                <div class="prose prose-gray max-w-none" set:html={faq.answer} />
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {buttonText && (
+        <div class="btn_wrap text-center mt-12">
+          <a 
+            href={buttonHref}
+            class="btn_yellow F-trigger inline-flex items-center bg-accent hover:bg-accent/90 text-black font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
+          >
+            {buttonText}
+          </a>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize accordion functionality
+  const accordionItems = document.querySelectorAll('[data-accordion-item]');
+  
+  accordionItems.forEach((item, index) => {
+    const trigger = item.querySelector('.et_pb_toggle_title');
+    const content = item.querySelector('.et_pb_toggle_content');
+    const icon = item.querySelector('.accordion-icon');
+    
+    trigger.addEventListener('click', function() {
+      const isOpen = !content.classList.contains('hidden');
+      
+      // Close all other accordion items
+      accordionItems.forEach((otherItem, otherIndex) => {
+        if (otherIndex !== index) {
+          const otherContent = otherItem.querySelector('.et_pb_toggle_content');
+          const otherIcon = otherItem.querySelector('.accordion-icon');
+          const otherTrigger = otherItem.querySelector('.et_pb_toggle_title');
+          
+          otherContent.classList.add('hidden');
+          otherIcon.style.transform = 'rotate(0deg)';
+          otherItem.classList.remove('et_pb_toggle_open');
+          otherItem.classList.add('et_pb_toggle_close');
+        }
+      });
+      
+      // Toggle current item
+      if (isOpen) {
+        content.classList.add('hidden');
+        icon.style.transform = 'rotate(0deg)';
+        item.classList.remove('et_pb_toggle_open');
+        item.classList.add('et_pb_toggle_close');
+      } else {
+        content.classList.remove('hidden');
+        icon.style.transform = 'rotate(180deg)';
+        item.classList.remove('et_pb_toggle_close');
+        item.classList.add('et_pb_toggle_open');
+      }
+    });
+  });
+});
+</script>
+
+<style>
+.accordion_widget {
+  background: #f8f9fa;
+}
+
+.et_pb_toggle {
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.et_pb_toggle:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.et_pb_toggle_title {
+  font-family: 'Gotham Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.et_pb_toggle_content {
+  transition: all 0.3s ease;
+}
+
+.et_pb_toggle_open .et_pb_toggle_title {
+  background-color: #f8f9fa !important;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.et_pb_toggle_open .accordion-icon {
+  color: #fdb948;
+}
+
+.btn_yellow {
+  background: #fdb948;
+  box-shadow: 0px 6px 12px rgba(43, 43, 43, 0.15);
+  border-radius: 30px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn_yellow:hover {
+  background: #ec9b16;
+  transform: translateY(-1px);
+  box-shadow: 0px 8px 16px rgba(43, 43, 43, 0.2);
+}
+
+/* Prose styling for FAQ content */
+.prose {
+  color: #374151;
+  line-height: 1.75;
+}
+
+.prose p {
+  margin-bottom: 1rem;
+}
+
+.prose a {
+  color: #318ec3;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.prose a:hover {
+  color: #fdb948;
+  text-decoration: underline;
+}
+
+.prose ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: #111827;
+}
+</style>

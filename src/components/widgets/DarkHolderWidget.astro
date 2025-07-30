@@ -1,0 +1,104 @@
+---
+interface Props {
+  title: string;
+  buttonText?: string;
+  buttonHref?: string;
+  buttonId?: string;
+  className?: string;
+  variant?: 'default' | 'primary' | 'accent';
+}
+
+const { 
+  title,
+  buttonText = "Check if you qualify for a loan",
+  buttonHref = "/free-assessment",
+  buttonId = "C-trigger",
+  className = "",
+  variant = 'default'
+} = Astro.props;
+
+const variantClasses = {
+  default: 'bg-gray-800 text-white',
+  primary: 'bg-primary text-white',
+  accent: 'bg-accent/10 border-t-4 border-accent text-primary'
+};
+---
+
+<section class={`dark_holder_widget widget ${variantClasses[variant]} ${className}`}>
+  <div class="container max-w-4xl mx-auto px-4 py-16">
+    <div class="inner_widget text-center">
+      <h3 class="inner_title text-2xl lg:text-3xl font-bold mb-8 leading-tight" set:html={title} />
+      
+      {buttonText && (
+        <div class="btn_wrap">
+          <a 
+            href={buttonHref}
+            class={`btn_yellow rc_open ${buttonId} inline-flex items-center bg-accent hover:bg-accent/90 text-black font-semibold px-8 py-4 rounded-lg transition-colors text-lg`}
+          >
+            {buttonText}
+          </a>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+.dark_holder_widget {
+  position: relative;
+  overflow: hidden;
+}
+
+.dark_holder_widget::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.inner_widget {
+  position: relative;
+  z-index: 1;
+}
+
+.btn_yellow {
+  background: #fdb948;
+  box-shadow: 0px 6px 12px rgba(43, 43, 43, 0.15);
+  border-radius: 30px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn_yellow:hover {
+  background: #ec9b16;
+  transform: translateY(-2px);
+  box-shadow: 0px 8px 20px rgba(43, 43, 43, 0.25);
+}
+
+/* Variant-specific styles */
+.dark_holder_widget.bg-gray-800 {
+  background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+}
+
+.dark_holder_widget.bg-primary {
+  background: linear-gradient(135deg, #262626 0%, #171717 100%);
+}
+
+.dark_holder_widget.bg-accent\/10 {
+  background: linear-gradient(135deg, rgba(253, 185, 72, 0.1) 0%, rgba(253, 185, 72, 0.05) 100%);
+}
+
+@media (max-width: 767px) {
+  .inner_title {
+    font-size: 1.5rem;
+  }
+  
+  .dark_holder_widget {
+    padding: 3rem 0;
+  }
+}
+</style>

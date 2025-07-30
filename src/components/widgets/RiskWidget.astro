@@ -1,0 +1,203 @@
+---
+interface RiskPoint {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title?: string;
+  statistic?: string;
+  statisticTooltip?: string;
+  content?: string;
+  riskPoints?: RiskPoint[];
+  managerImage?: string;
+  className?: string;
+}
+
+const { 
+  title = "Don't risk having your home loan declined",
+  statistic = "40%",
+  statisticTooltip = "Approximately 40% of home loan applications were rejected in December 2018 based on a survey of 52,000 households completed by 'DigitalFinance Analytics DFA'. In 2017 to 2018 Hunter Galloway submitted 342 home loan applications and had 8 applications rejected, giving a 2.33% rejection rate.",
+  content = "of home loan applications that get submitted never make it to settlement? Don't take that risk.",
+  riskPoints = [
+    {
+      icon: "scheme_ico",
+      title: "We know the banks inside out",
+      description: "Our brokers have seen all sorts of mistakes in the past! With their level of experience, they know the problems you may face on your loan application and how to mitigate them when applying with a specific bank or lender. We have a wide range of lenders on our panel and our brokers intimately understand their credit policies."
+    },
+    {
+      icon: "umbrella_ico", 
+      title: "Reducing risk of rejection",
+      description: "We can do this through our own internal credit assessment process which we complete before applying with any lender. Our team has its own internal Credit Manager who reviews each application before being submitted to the lenders, meaning we won't apply with a lender who won't approve your loan."
+    }
+  ],
+  managerImage = "/images/manager_new.png",
+  className = ""
+} = Astro.props;
+---
+
+<section class={`risk_widget widget ${className}`}>
+  <div class="container max-w-6xl mx-auto px-4 py-16">
+    <div class="inner_widget">
+      <h2 class="inner_title text-3xl lg:text-4xl font-bold text-primary text-center mb-12">
+        {title}
+      </h2>
+      
+      <div class="risk_holder grid lg:grid-cols-2 gap-12 items-center">
+        <div class="risk_inner-left">
+          <div class="mb-8">
+            <p class="text-lg leading-relaxed">
+              Did you know that over
+              <span class="market_text relative inline-block mx-2">
+                <span class="text-3xl font-bold text-accent cursor-pointer hover:text-accent/80 transition-colors" data-tooltip-trigger>
+                  {statistic}
+                </span>
+                <div class="market_dd absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden">
+                  <div class="inner bg-gray-800 text-white text-sm p-4 rounded-lg shadow-lg max-w-md">
+                    {statisticTooltip}
+                  </div>
+                </div>
+              </span>
+              {content}
+            </p>
+          </div>
+
+          <ul class="risk_list space-y-8">
+            {riskPoints.map(point => (
+              <li class={`${point.icon} flex gap-4`}>
+                <div class="icon-wrapper flex-shrink-0 w-12 h-12 flex items-center justify-center">
+                  {point.icon === 'scheme_ico' && (
+                    <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"></path>
+                    </svg>
+                  )}
+                  {point.icon === 'umbrella_ico' && (
+                    <svg class="w-8 h-8 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0v-3a3 3 0 013-3h2.25L5.7 7.6A1 1 0 016 6h10a3 3 0 01-3 3H3z" clip-rule="evenodd"></path>
+                    </svg>
+                  )}
+                </div>
+                <div class="flex-1">
+                  <p class="list_title text-xl font-bold text-primary mb-3">
+                    {point.title}
+                  </p>
+                  <p class="list_text text-gray-600 leading-relaxed">
+                    {point.description}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="risk_imgwrap text-center lg:text-right">
+          <img 
+            src={managerImage} 
+            alt="Manager"
+            class="max-w-full h-auto mx-auto lg:mx-0 rounded-lg shadow-lg"
+            loading="lazy"
+            width="400"
+            height="500"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Tooltip functionality
+  const tooltipTriggers = document.querySelectorAll('[data-tooltip-trigger]');
+  
+  tooltipTriggers.forEach(trigger => {
+    const tooltip = trigger.parentElement.querySelector('.market_dd');
+    
+    trigger.addEventListener('mouseenter', () => {
+      tooltip.classList.remove('hidden');
+    });
+    
+    trigger.addEventListener('mouseleave', () => {
+      tooltip.classList.add('hidden');
+    });
+    
+    trigger.addEventListener('click', () => {
+      tooltip.classList.toggle('hidden');
+    });
+  });
+  
+  // Close tooltip when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.market_text')) {
+      document.querySelectorAll('.market_dd').forEach(tooltip => {
+        tooltip.classList.add('hidden');
+      });
+    }
+  });
+});
+</script>
+
+<style>
+.risk_widget {
+  background: #f8f9fa;
+}
+
+.market_text {
+  position: relative;
+}
+
+.market_dd {
+  z-index: 10;
+  min-width: 300px;
+}
+
+.market_dd::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #374151;
+}
+
+.risk_list li {
+  border-left: 4px solid transparent;
+  padding-left: 1rem;
+  transition: all 0.3s ease;
+}
+
+.risk_list li:hover {
+  border-left-color: #fdb948;
+  background: rgba(253, 185, 72, 0.05);
+  padding-left: 1.5rem;
+}
+
+.icon-wrapper {
+  background: rgba(253, 185, 72, 0.1);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.risk_list li:hover .icon-wrapper {
+  background: rgba(253, 185, 72, 0.2);
+  transform: scale(1.1);
+}
+
+@media (max-width: 1023px) {
+  .risk_holder {
+    text-align: center;
+  }
+  
+  .risk_imgwrap {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+  
+  .risk_inner-left {
+    text-align: left;
+  }
+}
+</style>

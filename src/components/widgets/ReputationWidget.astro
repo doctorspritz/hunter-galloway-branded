@@ -1,0 +1,246 @@
+---
+interface Award {
+  image: string;
+  alt: string;
+  title?: string;
+}
+
+interface Props {
+  title?: string;
+  statText?: string;
+  rejectionRate?: string;
+  rejectionTooltip?: string;
+  awardTitle?: string;
+  awards?: Award[];
+  className?: string;
+}
+
+const defaultAwards: Award[] = [
+  { image: "/images/img_new/best-mortgage-broker-2019.png", alt: "Best Mortgage Broker 2019" },
+  { image: "/images/img_new/2019_001.png", alt: "2019 Award 1" },
+  { image: "/images/img_new/2019_002.png", alt: "2019 Award 2" },
+  { image: "/images/awards/2024-qld-nt-broker-of-the-year.png", alt: "2024 QLD NT Broker of the Year" },
+  { image: "/images/awards/qld-nt-brokerage-under-5-brokers.png", alt: "QLD NT Brokerage Under 5 Brokers" },
+  { image: "/images/awards/Mortgage-Broker-Brisbane-Hunter-Galloway-Award-2024.webp", alt: "ThreeBest Best Business 2024" }
+];
+
+const { 
+  title = "Our reputation and achievements",
+  statText = "Market average rejection rate is 40%, our rejection rate is",
+  rejectionRate = "3%",
+  rejectionTooltip = "Approximately 40% of home loan applications were rejected in December 2018 based on a survey of 52,000 households completed by 'DigitalFinance Analytics DFA'. In 2017 to 2018 Hunter Galloway submitted 342 home loan applications and had 8 applications rejected, giving a 2.33% rejection rate.",
+  awardTitle = "2019 Mortgage Broker of the Year",
+  awards = defaultAwards,
+  className = ""
+} = Astro.props;
+---
+
+<section class={`reputation_widget widget ${className}`}>
+  <div class="container max-w-6xl mx-auto px-4 py-16">
+    <div class="inner_widget">
+      <h2 class="inner_title text-3xl lg:text-4xl font-bold text-primary text-center mb-12">
+        {title}
+      </h2>
+      
+      <div class="market_wrapper mb-12">
+        <div class="market_text text-center">
+          <span class="text-lg">
+            {statText} 
+            <span class="relative inline-block mx-1">
+              <strong class="text-3xl font-bold text-accent cursor-pointer hover:text-accent/80 transition-colors" data-tooltip-trigger>
+                {rejectionRate}
+              </strong>
+              <div class="market_dd absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 hidden">
+                <div class="inner bg-gray-800 text-white text-sm p-4 rounded-lg shadow-lg max-w-md">
+                  {rejectionTooltip}
+                </div>
+              </div>
+            </span>
+          </span>
+        </div>
+      </div>
+      
+      <div class="reputation_prize text-center mb-8">
+        <span class="text-2xl font-bold text-primary">{awardTitle}</span>
+      </div>
+
+      <div class="front_popup_prize_image flex justify-center">
+        <div class="slider_prize swiper-container max-w-4xl" data-awards-slider>
+          <div class="swiper-wrapper">
+            {awards.map(award => (
+              <div class="slide_item swiper-slide">
+                <div class="award-item text-center p-4">
+                  <img 
+                    src={award.image} 
+                    alt={award.alt}
+                    class="award-image max-h-32 w-auto mx-auto object-contain hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  {award.title && (
+                    <p class="award-title text-sm font-medium text-gray-600 mt-2">
+                      {award.title}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <!-- Navigation arrows -->
+          <div class="slide-button-next absolute top-1/2 right-4 transform -translate-y-1/2 z-10 cursor-pointer">
+            <svg class="w-8 h-8 text-gray-400 hover:text-accent transition-colors" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+          <div class="slide-button-prev absolute top-1/2 left-4 transform -translate-y-1/2 z-10 cursor-pointer">
+            <svg class="w-8 h-8 text-gray-400 hover:text-accent transition-colors" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Tooltip functionality
+  const tooltipTriggers = document.querySelectorAll('[data-tooltip-trigger]');
+  
+  tooltipTriggers.forEach(trigger => {
+    const tooltip = trigger.parentElement.querySelector('.market_dd');
+    
+    trigger.addEventListener('mouseenter', () => {
+      tooltip.classList.remove('hidden');
+    });
+    
+    trigger.addEventListener('mouseleave', () => {
+      tooltip.classList.add('hidden');
+    });
+    
+    trigger.addEventListener('click', () => {
+      tooltip.classList.toggle('hidden');
+    });
+  });
+  
+  // Close tooltip when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('[data-tooltip-trigger]')) {
+      document.querySelectorAll('.market_dd').forEach(tooltip => {
+        tooltip.classList.add('hidden');
+      });
+    }
+  });
+  
+  // Initialize awards slider if Swiper is available
+  if (typeof Swiper !== 'undefined') {
+    const awardsSlider = new Swiper('[data-awards-slider]', {
+      slidesPerView: 2,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.slide-button-next',
+        prevEl: '.slide-button-prev',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 3,
+        },
+        1024: {
+          slidesPerView: 4,
+        },
+      },
+    });
+  }
+});
+</script>
+
+<style>
+.reputation_widget {
+  background: #ffffff;
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.market_dd {
+  z-index: 10;
+  min-width: 300px;
+}
+
+.market_dd::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #374151;
+}
+
+.slider_prize {
+  position: relative;
+  overflow: hidden;
+  padding: 0 50px;
+}
+
+.award-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+}
+
+.award-image {
+  transition: transform 0.3s ease;
+  filter: grayscale(20%);
+}
+
+.award-image:hover {
+  filter: grayscale(0%);
+}
+
+.slide-button-next,
+.slide-button-prev {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.slide-button-next:hover,
+.slide-button-prev:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.reputation_prize {
+  background: linear-gradient(135deg, #fdb948 0%, #ec9b16 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@media (max-width: 767px) {
+  .slider_prize {
+    padding: 0 40px;
+  }
+  
+  .slide-button-next,
+  .slide-button-prev {
+    width: 32px;
+    height: 32px;
+  }
+}
+</style>

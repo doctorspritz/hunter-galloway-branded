@@ -1,0 +1,194 @@
+---
+interface Lender {
+  name: string;
+  logo: string;
+  alt: string;
+}
+
+interface Props {
+  title?: string;
+  lenders?: Lender[];
+  className?: string;
+  autoPlay?: boolean;
+}
+
+const defaultLenders: Lender[] = [
+  { name: "Westpac", logo: "/images/img_new/logos/westpac_logo.svg", alt: "Westpac Bank" },
+  { name: "ANZ", logo: "/images/img_new/logos/anz.svg", alt: "ANZ Bank" },
+  { name: "NAB", logo: "/images/img_new/logos/nab.svg", alt: "NAB" },
+  { name: "CommBank", logo: "/images/img_new/logos/cb.svg", alt: "Commonwealth Bank (CBA)" },
+  { name: "St.George", logo: "/images/img_new/logos/george.svg", alt: "St George Mortgage Brokers" },
+  { name: "Macquarie", logo: "/images/img_new/logos/macq_logo.png", alt: "Macquarie Bank" },
+  { name: "Suncorp", logo: "/images/img_new/logos/suncorp.svg", alt: "Suncorp Bank" },
+  { name: "ING", logo: "/images/img_new/logos/ing.svg", alt: "ING Direct" },
+  { name: "ME Bank", logo: "/images/img_new/logos/mebank.jpg", alt: "ME Bank" },
+  { name: "Bankwest", logo: "/images/img_new/logos/bw.svg", alt: "Bankwest" },
+  { name: "FirstMac", logo: "/images/img_new/logos/fm.svg", alt: "FirstMac" },
+  { name: "Teachers Mutual", logo: "/images/img_new/logos/teachers-mutual-bank.png", alt: "Teachers mutual" },
+  { name: "Bank of Queensland", logo: "https://assets-global.website-files.com/6136b19c6ce8df83584ee2cf/6147e7a162f7c8729cdffb97_bank-of-queensland-limited-boq-vector-logo%20copy-2.png", alt: "Bank of queensland" },
+  { name: "Auswide Bank", logo: "https://www.auswidebank.com.au/Client_Theme/imgs/auswide-bank-logo.png", alt: "Auswide Bank" }
+];
+
+const { 
+  title = "Lenders on our panel",
+  lenders = defaultLenders,
+  className = "",
+  autoPlay = true
+} = Astro.props;
+---
+
+<section class={`lenders_widget widget ${className}`}>
+  <div class="container max-w-6xl mx-auto px-4 py-16">
+    <div class="inner_widget">
+      <h2 class="inner_title text-3xl lg:text-4xl font-bold text-primary text-center mb-12">
+        {title}
+      </h2>
+
+      <div class="lenders_slider swiper-container" data-lenders-slider>
+        <div class="img_holder swiper-wrapper grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6 items-center justify-items-center">
+          {lenders.map(lender => (
+            <div class="slide_item swiper-slide image_wrap flex items-center justify-center">
+              <img 
+                src={lender.logo} 
+                alt={lender.alt}
+                class="lender-logo max-h-12 w-auto opacity-70 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0"
+                loading="lazy"
+                width="100"
+                height="48"
+              />
+            </div>
+          ))}
+        </div>
+        
+        <!-- Navigation arrows for mobile -->
+        <div class="slide-button-next absolute top-1/2 right-4 transform -translate-y-1/2 z-10 cursor-pointer md:hidden">
+          <svg class="w-6 h-6 text-gray-400 hover:text-accent transition-colors" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <div class="slide-button-prev absolute top-1/2 left-4 transform -translate-y-1/2 z-10 cursor-pointer md:hidden">
+          <svg class="w-6 h-6 text-gray-400 hover:text-accent transition-colors" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ autoPlay }}>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize slider if Swiper is available and on mobile
+  if (typeof Swiper !== 'undefined' && window.innerWidth < 768) {
+    const lendersSlider = new Swiper('[data-lenders-slider]', {
+      slidesPerView: 2,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: autoPlay ? {
+        delay: 3000,
+        disableOnInteraction: false,
+      } : false,
+      navigation: {
+        nextEl: '.slide-button-next',
+        prevEl: '.slide-button-prev',
+      },
+      breakpoints: {
+        480: {
+          slidesPerView: 3,
+        },
+        640: {
+          slidesPerView: 4,
+        },
+      },
+    });
+  }
+});
+</script>
+
+<style>
+.lenders_widget {
+  background: #ffffff;
+  border-top: 1px solid #e9ecef;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.lenders_slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.image_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  padding: 1rem;
+}
+
+.lender-logo {
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: all 0.3s ease;
+}
+
+.lender-logo:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.slide-button-next,
+.slide-button-prev {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.slide-button-next:hover,
+.slide-button-prev:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Grid layout for larger screens */
+@media (min-width: 768px) {
+  .lenders_slider .swiper-wrapper {
+    display: grid !important;
+    transform: none !important;
+  }
+  
+  .slide-button-next,
+  .slide-button-prev {
+    display: none;
+  }
+}
+
+/* Responsive grid adjustments */
+@media (min-width: 1024px) {
+  .img_holder {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .img_holder {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .img_holder {
+    display: flex !important;
+    grid-template-columns: none;
+  }
+  
+  .lenders_slider {
+    padding: 0 50px;
+  }
+}
+</style>

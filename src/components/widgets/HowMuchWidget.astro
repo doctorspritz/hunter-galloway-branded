@@ -1,0 +1,126 @@
+---
+interface Props {
+  title?: string;
+  content?: string;
+  image?: string;
+  imageAlt?: string;
+  className?: string;
+  imagePosition?: 'left' | 'right';
+}
+
+const { 
+  title = "How much does it cost to use a broker and your services?",
+  content = `<p>Our services are completely free for all home and investment loans. We get paid by the lenders for doing the work, collating your loan application and meeting with you. This work would otherwise be done by a bank manager or branch lender so you get access to the same rates as if you went to the lender directly.</p>
+  <p>The advantage for you is that unlike when dealing with one bank, we can help you work with a wider variety of lenders and get the best options that work for you choosing from our panel of over 30 banks and lenders!</p>`,
+  image = "/images/bank.svg",
+  imageAlt = "Bank illustration",
+  className = "",
+  imagePosition = 'left'
+} = Astro.props;
+---
+
+<section class={`how_much_widget widget ${className}`}>
+  <div class="container max-w-6xl mx-auto px-4 py-16">
+    <div class="inner_widget">
+      <div class={`how_much_holder grid lg:grid-cols-2 gap-12 items-center ${imagePosition === 'right' ? 'lg:grid-flow-col-dense' : ''}`}>
+        <div class={`col_img ${imagePosition === 'right' ? 'lg:col-start-2' : ''}`}>
+          <div class="image-container text-center lg:text-left">
+            <img 
+              src={image}
+              alt={imageAlt}
+              class="max-w-full h-auto mx-auto lg:mx-0 max-h-64 object-contain"
+              loading="lazy"
+              width="300"
+              height="256"
+            />
+          </div>
+        </div>
+        
+        <div class={`col_text ${imagePosition === 'right' ? 'lg:col-start-1' : ''}`}>
+          <h2 class="inner_title text-3xl lg:text-4xl font-bold text-primary mb-6 leading-tight">
+            {title}
+          </h2>
+          
+          <div class="content-wrapper prose prose-lg max-w-none prose-p:text-gray-600 prose-p:leading-relaxed prose-p:mb-4">
+            <Fragment set:html={content} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.how_much_widget {
+  background: #ffffff;
+}
+
+.image-container {
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 1rem;
+  border: 1px solid #e9ecef;
+  transition: all 0.3s ease;
+}
+
+.image-container:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transform: translateY(-5px);
+}
+
+.col_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inner_title {
+  font-family: 'Gotham Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Prose customization for this widget */
+.prose p {
+  color: #4b5563;
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.prose p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1023px) {
+  .how_much_holder {
+    text-align: center;
+  }
+  
+  .col_img {
+    order: -1;
+    margin-bottom: 1rem;
+  }
+  
+  .col_text {
+    text-align: left;
+  }
+  
+  .inner_title {
+    text-align: center;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .inner_title {
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+  
+  .prose p {
+    font-size: 1rem;
+  }
+  
+  .image-container {
+    padding: 1.5rem;
+  }
+}
+</style>

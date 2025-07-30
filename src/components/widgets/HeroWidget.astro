@@ -1,0 +1,94 @@
+---
+interface Props {
+  title: string;
+  subtitle?: string;
+  buttonText?: string;
+  buttonHref?: string;
+  promiseText?: string;
+  className?: string;
+  showStats?: boolean;
+  yearIcon?: boolean;
+}
+
+const { 
+  title, 
+  subtitle, 
+  buttonText = "Get a Free Assessment", 
+  buttonHref = "/free-assessment",
+  promiseText = "We promise to get back to you within 4 business hours",
+  className = "",
+  showStats = true,
+  yearIcon = false
+} = Astro.props;
+---
+
+<section class={`hero_widget widget ${className}`}>
+  <div class="container max-w-6xl mx-auto px-4 py-12">
+    <div class="inner_widget">
+      <h1 class="hero_title text-4xl lg:text-5xl font-bold text-primary mb-6 leading-tight">
+        {title}
+      </h1>
+      
+      {subtitle && (
+        <p class="hero_subtitle text-xl text-gray-600 mb-6 leading-relaxed max-w-3xl">
+          {subtitle}
+        </p>
+      )}
+      
+      <p class="hero_text text-lg font-medium text-gray-700 mb-6">
+        Find out your chances of getting a loan
+      </p>
+      
+      <div class="btn_wrap mb-6">
+        <a 
+          href={buttonHref}
+          class="btn_yellow rc_open A-trigger inline-flex items-center bg-accent hover:bg-accent/90 text-black font-semibold px-8 py-4 rounded-lg transition-colors text-lg"
+        >
+          {buttonText}
+        </a>
+      </div>
+      
+      {promiseText && (
+        <p class="hero_text bottom-text text-sm text-gray-500 font-medium">
+          {promiseText}
+        </p>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+.hero_widget {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-bottom: 1px solid #e9ecef;
+}
+
+.hero_title {
+  font-family: 'Gotham Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.btn_yellow {
+  background: #fdb948;
+  box-shadow: 0px 6px 12px rgba(43, 43, 43, 0.15);
+  border-radius: 30px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn_yellow:hover {
+  background: #ec9b16;
+  transform: translateY(-1px);
+  box-shadow: 0px 8px 16px rgba(43, 43, 43, 0.2);
+}
+
+@media (max-width: 767px) {
+  .hero_title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .hero_subtitle {
+    font-size: 1.125rem;
+  }
+}
+</style>

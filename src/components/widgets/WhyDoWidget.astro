@@ -1,0 +1,163 @@
+---
+interface ComparisonColumn {
+  logo: string;
+  title: string;
+  points: string[];
+  className?: string;
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  hunterGallowayColumn?: ComparisonColumn;
+  directLenderColumn?: ComparisonColumn;
+  className?: string;
+}
+
+const { 
+  title = "Why do I need a broker if I can get a loan through my bank?",
+  subtitle = "Just compare these two options when applying for a loan",
+  hunterGallowayColumn = {
+    logo: "/images/logo_dark.svg",
+    title: "Get a Loan with Hunter Galloway",
+    points: [
+      "We take extra time up front to go through your full situation and provide a complete lending solution.",
+      "Our brokers will look at your needs now and into the future, to make sure you have the best possible loan that looks after all of your needs.",
+      "A mortgage broker acts on your behalf to arrange a home loan through a bank or lender. Australian banks and lenders have different policies and loan requirements, and it is a brokers job to find a loan from one of these parties that fit with your individual situation."
+    ],
+    className: "col_yellow"
+  },
+  directLenderColumn = {
+    logo: "/images/white_hand.svg",
+    title: "Applying directly to a lender",
+    points: [
+      "You might have a situation where your bank will approve a loan for you to buy a block of land and then not approve the construction loan when its time to construct a house on it!",
+      "Quite often bank policy can be set in stone, and due to the complexity bank staff quite honestly don't know it nor do many mortgage brokers Brisbane. They are not familiar with complex situations and how to correctly assess them. This can sometimes cause it to take quite a long time to process your application and even in some instances mean your loan will get declined for no good reason."
+    ],
+    className: "col_dark"
+  },
+  className = ""
+} = Astro.props;
+---
+
+<section class={`why_do_widget widget ${className}`}>
+  <div class="container max-w-6xl mx-auto px-4 py-16">
+    <div class="inner_widget">
+      <h2 class="inner_title text-3xl lg:text-4xl font-bold text-primary text-center mb-6">
+        {title}
+      </h2>
+      <p class="subtitle text-lg text-gray-600 text-center mb-12">
+        {subtitle}
+      </p>
+      
+      <div class="why_do_holder grid md:grid-cols-2 gap-8">
+        <!-- Hunter Galloway Column -->
+        <div class={`comparison-column ${hunterGallowayColumn.className}`}>
+          <div class="column-header text-center mb-6">
+            <img 
+              src={hunterGallowayColumn.logo} 
+              alt="Hunter Galloway Logo"
+              class="h-12 w-auto mx-auto mb-4"
+              loading="lazy"
+            />
+          </div>
+          <div class="col_title text-center mb-6">
+            <p class="text-xl font-bold">{hunterGallowayColumn.title}</p>
+          </div>
+          <ul class="why_do_list space-y-4">
+            {hunterGallowayColumn.points.map(point => (
+              <li class="flex items-start gap-3">
+                <div class="flex-shrink-0 w-2 h-2 bg-accent rounded-full mt-3"></div>
+                <p class="text-gray-700 leading-relaxed">{point}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+        
+        <!-- Direct Lender Column -->
+        <div class={`comparison-column ${directLenderColumn.className}`}>
+          <div class="column-header text-center mb-6">
+            <img 
+              src={directLenderColumn.logo} 
+              alt="Direct Lender Icon"
+              class="h-12 w-auto mx-auto mb-4"
+              loading="lazy"
+            />
+          </div>
+          <div class="col_title text-center mb-6">
+            <p class="text-xl font-bold">{directLenderColumn.title}</p>
+          </div>
+          <ul class="why_do_list space-y-4">
+            {directLenderColumn.points.map(point => (
+              <li class="flex items-start gap-3">
+                <div class="flex-shrink-0 w-2 h-2 bg-red-500 rounded-full mt-3"></div>
+                <p class="leading-relaxed">{point}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.why_do_widget {
+  background: #ffffff;
+}
+
+.comparison-column {
+  padding: 2rem;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comparison-column:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.col_yellow {
+  background: linear-gradient(135deg, #fff9e6 0%, #fef3c7 100%);
+  border: 2px solid #fdb948;
+}
+
+.col_yellow .col_title p {
+  color: #92400e;
+}
+
+.col_yellow .why_do_list p {
+  color: #78716c;
+}
+
+.col_dark {
+  background: linear-gradient(135deg, #374151 0%, #1f2937 100%);
+  border: 2px solid #4b5563;
+}
+
+.col_dark .col_title p {
+  color: #ffffff;
+}
+
+.col_dark .why_do_list p {
+  color: #d1d5db;
+}
+
+.col_dark img {
+  filter: brightness(0) invert(1);
+}
+
+@media (max-width: 767px) {
+  .why_do_holder {
+    gap: 2rem;
+  }
+  
+  .comparison-column {
+    padding: 1.5rem;
+  }
+  
+  .col_title p {
+    font-size: 1.125rem;
+  }
+}
+</style>

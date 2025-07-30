@@ -1,0 +1,206 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+
+// PHP-matched widgets
+import HeroWidget from '../../components/widgets/HeroWidget.astro';
+import ReputationWidget from '../../components/widgets/ReputationWidget.astro';
+import RiskWidget from '../../components/widgets/RiskWidget.astro';
+import WhyChooseWidget from '../../components/widgets/WhyChooseWidget.astro';
+import WhyDoWidget from '../../components/widgets/WhyDoWidget.astro';
+import HowMuchWidget from '../../components/widgets/HowMuchWidget.astro';
+import DarkHolderWidget from '../../components/widgets/DarkHolderWidget.astro';
+import ReviewsWidget from '../../components/widgets/ReviewsWidget.astro';
+import LendersWidget from '../../components/widgets/LendersWidget.astro';
+import AccordionWidget from '../../components/widgets/AccordionWidget.astro';
+
+// Data for components
+const whyChooseBenefits = [
+  {
+    icon: "/images/icons/why_choose_001.svg",
+    title: "One of the lowest rejection rates",
+    description: "across Mortgage Brokers in Australia"
+  },
+  {
+    icon: "/images/icons/why_choose_002.svg", 
+    title: "The highest rated and most reviewed",
+    description: "Mortgage Broker in Brisbane on Google"
+  },
+  {
+    icon: "/images/icons/why_choose_003.svg",
+    title: "We have direct access to 30+ banks and lenders",
+    description: "across Australia"
+  }
+];
+
+const reviews = [
+  {
+    name: "Reynold",
+    date: "3 weeks ago",
+    rating: 5,
+    text: "My mortgage was not your typical simple loan; it required a lot of attention and out of the box thinking.",
+    expandedText: "All of this was provided by the team. Both Nathan and Josh worked tirelessly to get the result and outcome that I needed. They are incredibly personable, professional and a joy to work with.",
+    avatar: "/images/testimonials/mortgage-broker-brisbane-testimonial.png"
+  },
+  {
+    name: "Charles Phillis", 
+    date: "3 weeks ago",
+    rating: 5,
+    text: "These gentlemen came recommended and I was genuinely impressed; the personalized service and",
+    expandedText: "very rapid reply to queries and constant updates was impressive as well as the ease with which they performed all the necessary work. They are very thorough and whilst collating paperwork is never much fun, they make it easy and explain why having all in place first is the best method. Very impressed!",
+    avatar: "/images/testimonials/mortgage-broker-brisbane-testimonial-2.png"
+  },
+  {
+    name: "Melissa Allison",
+    date: "3 weeks ago", 
+    rating: 5,
+    text: "Thank you so much to Nathan, Josh, Jared and the team for everything that they did for us in the process of buying our",
+    expandedText: "first house. They truly made it a seamless process. The team were always so on top of everything and kept us in the loop every step of the way. We will recommend Hunter Galloway to everyone we know! Thanks again boys!",
+    avatar: "/images/testimonials/mortgage-broker-brisbane-testimonial3.png"
+  }
+];
+
+const faqs = [
+  {
+    question: "What is a mortgage broker?",
+    answer: "<p>A mortgage broker in Brisbane is a consultant that can help you with finding a home loan, or mortgage usually from their panel of lenders. Once the right home loan has been selected, the mortgage broker will help you manage the home loan process, from initially signing the paperwork all the way until settlement.</p>"
+  },
+  {
+    question: "What does a mortgage broker do?", 
+    answer: `<p>A mortgage broker acts on your behalf to arrange a home loan through a bank or lender. Australian banks and lenders have different policies and loan requirements, and it is a brokers job to find a loan from one of these parties that fit with your individual situation.</p>
+    <p>Mortgage Brokers can help find the right home loan for any situation, from purchasing your first home to buying an investment property all the way to refinancing your mortgage to a better interest rate.</p>
+    <p>At <a href="/">Hunter Galloway</a> we have access to over 30 different banks and lenders, giving you a wide range of home loan options to ensure we have a lender that can fit in with what you need.</p>`
+  },
+  {
+    question: "How do brokers get paid?",
+    answer: `<p>Mortgage brokers in Brisbane get paid commissions from the banks, we do the same work the branch manager would do in putting together your loan application – except we are invested in your loan application and will work very hard to get it approved, as well as provide incredible service.</p>
+    <p>As our team at <a href="/">Hunter Galloway</a> are mortgage broking and credit experts we can answer all of your questions instead of directing you to another department.</p>`
+  },
+  {
+    question: "Why should I use a mortgage broker in Brisbane?",
+    answer: `<p>The best mortgage brokers can help you through their intimate knowledge of credit policy, making the home loan process quick, easy and stress-free.</p>
+    <p>We work with a wide range of borrowers, from <a href="/first-home-buyer-loans/">first home owners</a>, <a href="/property-investor-portfolio/">experienced property investors</a> to <a href="/home-loans-for-doctors/">medical professionals</a> helping them find the best deal.</p>
+    <p>Through our intimate bank credit knowledge, we can find 'secret' policy exceptions to get approvals for applications that would normally get declined, including no deposit <a href="/guarantor-home-loan/">guarantor home loans</a> and <a href="/unusual-employment-loan/">unusual employment loans.</a></p>`
+  },
+  {
+    question: "What makes you the best mortgage broker in Brisbane?",
+    answer: `<p>We believe slow is fast, and unlike other mortgage brokers who just send your application to a bank on a hope and a whim, we take time to understand your situation and how the bank will assess it.</p>
+    <p>This means when the application goes to the bank it has a much higher chance of approval. The bank is more likely to approve your home loan application first time, without asking any further questions.</p>
+    <p>It's our job to take the stress out of navigating the home loan process, and this approach has made us the best mortgage brokers in Brisbane with over 350+ google reviews.</p>`
+  }
+];
+---
+
+<BaseLayout 
+  title="Mortgage Broker Brisbane | Award-Winning Service | Hunter Galloway"
+  description="Brisbane's #1 mortgage broker with 97% approval rate. Award-winning service, 30+ lenders, and expert local knowledge. Get your free assessment today."
+>
+  <Fragment slot="header"><SiteHeader /></Fragment>
+
+  <!-- Hero Section -->
+  <HeroWidget 
+    title="Mortgage Broker Brisbane"
+    subtitle="Improve your chances of getting a loan with an award winning mortgage broker. We have one of the highest loan approval rates in the country."
+    buttonText="Get a Free Assessment"
+    promiseText="We promise to get back to you within 4 business hours"
+  />
+
+  <!-- Reputation Section -->
+  <ReputationWidget />
+
+  <!-- Risk Reduction Section -->
+  <RiskWidget />
+
+  <!-- Why Choose Section -->
+  <WhyChooseWidget 
+    title="Why Choose Hunter Galloway As<br>Your Mortgage Broker?"
+    benefits={whyChooseBenefits}
+    buttonText="Find out if you're eligible for a loan"
+    buttonId="B-trigger"
+  />
+
+  <!-- Broker vs Bank Comparison -->
+  <WhyDoWidget />
+
+  <!-- Cost Information -->
+  <HowMuchWidget />
+
+  <!-- CTA Section 1 -->
+  <DarkHolderWidget 
+    title="Would you like to learn about your situation?"
+    buttonText="Check if you qualify for a loan"
+    buttonId="C-trigger"
+    variant="default"
+  />
+
+  <!-- CTA Section 2 -->
+  <DarkHolderWidget 
+    title=""
+    buttonText="Discover your individual borrowing capacity"
+    buttonId="D-trigger"
+    variant="primary"
+    className="dark_btn_widget"
+  />
+
+  <!-- Reviews Section -->
+  <ReviewsWidget 
+    reviews={reviews}
+  />
+
+  <!-- Lenders Section -->
+  <LendersWidget />
+
+  <!-- Another CTA -->
+  <DarkHolderWidget 
+    title=""
+    buttonText="Get your free credit rating assessment"
+    buttonId="E-trigger"
+    variant="accent"
+    className="img_btn_widget"
+  />
+
+  <!-- FAQ Section -->
+  <AccordionWidget 
+    faqs={faqs}
+  />
+
+  <!-- Compliance Section -->
+  <section class="text_widget widget bg-white py-16">
+    <div class="container max-w-4xl mx-auto px-4">
+      <div class="inner_widget prose prose-lg max-w-none">
+        <h3 class="inner_title text-2xl font-bold text-primary mb-6">FBAA & Credit and Investments Ombudsman Membership</h3>
+        <p>As members of the Financial Brokers Association of Australia (FBAA) and the Credit and Investments Ombudsman (CIO) we must uphold the highest level of excellence when helping clients with their finances. The members of each organisation must meet a minimum standard in experience, education and ongoing training to maintain membership each year and as active members, we commit to upholding these standards, ensuring we maintain their high levels of compliance, integrity, and professionalism with all of our mortgage clients.</p>
+
+        <h3 class="inner_title text-2xl font-bold text-primary mb-6 mt-8">Valuation issues & credit scores</h3>
+        <p>One of the most common issues we see is with valuations and shortfalls which can ultimately stop your property journey before it even begins. We can order free upfront valuations with many of our lenders, meaning we can find out what your bank thinks your property is worth way before applying with them.</p>
+        <p>From experience, we know that ordering a valuation prior to applying for a home loan makes sure your credit file doesn't get damaged from having multiple enquiries.</p>
+        <p>We can provide free valuations and also a copy of your credit file so you know where you stand way before applying for a loan with the banks!</p>
+
+        <h3 class="inner_title text-2xl font-bold text-primary mb-6 mt-8">Complex Credit Policy Pitfalls</h3>
+        <p>Each lender and bank in Australia has a unique credit policy, meaning while some will accept your full income, others may not allow it due to their policy.</p>
+        <p>Quite often bank policy can be set in stone, and due to the complexity bank staff quite honestly don't know it nor do many mortgage broker Brisbane. They are not familiar with complex situations and how to correctly assess them. This can sometimes cause it to take quite a long time to process your application and even in some instances mean your loan will get declined for no good reason.</p>
+        <p>With banks making their policies more and more complex it becomes more important to correctly package, and assess your application before it is even lodged with the bank – showing the banks all of the strengths of your home loan application and making sure it fits all of their policies.</p>
+        <p>At Hunter Galloway we have our own in-house credit team and we make sure your application is going to fit with the bank each time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="video_widget widget bg-neutral py-16">
+    <div class="container max-w-4xl mx-auto px-4">
+      <div class="fluid-width-video-wrapper relative" style="padding-top: 56.25%;">
+        <iframe 
+          src="https://www.youtube.com/embed/EQFSii8_2DQ?rel=0&enablejsapi=1" 
+          frameborder="0" 
+          allowfullscreen
+          class="absolute inset-0 w-full h-full rounded-lg"
+          loading="lazy"
+          title="Hunter Galloway Mortgage Broker Brisbane Video"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <Fragment slot="footer"><SiteFooter /></Fragment>
+</BaseLayout>

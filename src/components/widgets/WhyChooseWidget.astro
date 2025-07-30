@@ -1,0 +1,112 @@
+---
+interface BenefitItem {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title?: string;
+  benefits: BenefitItem[];
+  buttonText?: string;
+  buttonHref?: string;
+  buttonId?: string;
+  className?: string;
+}
+
+const { 
+  title = "Why Choose Hunter Galloway As Your Mortgage Broker?",
+  benefits,
+  buttonText = "Find out if you're eligible for a loan",
+  buttonHref = "/free-assessment",
+  buttonId = "B-trigger",
+  className = ""
+} = Astro.props;
+---
+
+<section id="why_choose" class={`why_choose why_choose_widget widget ${className}`}>
+  <div class="container max-w-6xl mx-auto px-4 py-16">
+    <div class="inner_widget">
+      <div class="why_choose_title text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-primary leading-tight" set:html={title.replace(/\n/g, '<br>')} />
+      </div>
+      
+      <div class="why_choose_blocks">
+        <div class="why_choose_blocks_inner flex flex-wrap justify-center gap-8 lg:gap-12">
+          {benefits.map(benefit => (
+            <div class="why_choose_item text-center max-w-sm">
+              <div class="mb-6">
+                <img 
+                  src={benefit.icon} 
+                  alt={benefit.title}
+                  class="w-16 h-16 mx-auto"
+                  loading="lazy"
+                />
+              </div>
+              <div class="why_choose_item_title text-xl font-bold text-primary mb-4 leading-tight">
+                {benefit.title}
+              </div>
+              <div class="why_choose_item_text text-gray-600 leading-relaxed">
+                {benefit.description}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+      {buttonText && (
+        <div class="btn_wrap text-center mt-12">
+          <a 
+            href={buttonHref}
+            class={`btn_yellow rc_open ${buttonId} inline-flex items-center bg-accent hover:bg-accent/90 text-black font-semibold px-8 py-4 rounded-lg transition-colors text-lg`}
+          >
+            {buttonText}
+          </a>
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+.why_choose_widget {
+  background: #ffffff;
+}
+
+.why_choose_item {
+  transition: transform 0.3s ease;
+}
+
+.why_choose_item:hover {
+  transform: translateY(-5px);
+}
+
+.why_choose_item_title {
+  font-family: 'Gotham Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.btn_yellow {
+  background: #fdb948;
+  box-shadow: 0px 6px 12px rgba(43, 43, 43, 0.15);
+  border-radius: 30px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn_yellow:hover {
+  background: #ec9b16;
+  transform: translateY(-1px);
+  box-shadow: 0px 8px 16px rgba(43, 43, 43, 0.2);
+}
+
+@media (max-width: 1023px) {
+  .why_choose_blocks_inner {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .why_choose_item {
+    max-width: 400px;
+  }
+}
+</style>

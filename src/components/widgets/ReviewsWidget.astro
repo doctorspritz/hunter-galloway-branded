@@ -1,0 +1,205 @@
+---
+interface Review {
+  name: string;
+  date: string;
+  rating: number;
+  text: string;
+  expandedText?: string;
+  avatar?: string;
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  reviews: Review[];
+  className?: string;
+}
+
+const { 
+  title = "Google reviews of our customers",
+  subtitle = "Hunter Galloway Mortgage Brokers have helped hundreds of home owners.",
+  description = "We have built a brilliant reputation for being extremely well organised, helpful and making the home loan process as smooth as possible",
+  reviews,
+  className = ""
+} = Astro.props;
+---
+
+<section class={`reviews_widget widget ${className}`}>
+  <div class="container max-w-6xl mx-auto px-4 py-16">
+    <div class="inner_widget">
+      <div class="title_holder text-center mb-12">
+        <h2 class="inner_title text-3xl lg:text-4xl font-bold text-primary mb-6">{title}</h2>
+        <p class="text-lg text-gray-600 mb-4">{subtitle}</p>
+        <p class="text-lg text-gray-600">{description}</p>
+      </div>
+      
+      <div class="slider_holder swiper-container" data-reviews-slider>
+        <div class="swiper-wrapper">
+          {reviews.map((review, index) => (
+            <div class="slide_item swiper-slide">
+              <div class="review-card bg-white rounded-lg shadow-lg p-6 mx-4 h-full flex flex-col">
+                <div class="img_holder mb-4 text-center">
+                  <img 
+                    src={review.avatar || '/images/avatars/default-avatar.png'} 
+                    alt={review.name}
+                    class="w-16 h-16 rounded-full mx-auto object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                
+                <div class="rating_holder flex justify-center mb-4">
+                  {Array.from({ length: 5 }, (_, i) => (
+                    <img 
+                      src="/images/icons/star.svg" 
+                      alt="star"
+                      class={`w-5 h-5 ${i < review.rating ? 'opacity-100' : 'opacity-30'}`}
+                    />
+                  ))}
+                </div>
+                
+                <div class="text_holder flex-1 mb-4">
+                  <p class="text-gray-700 leading-relaxed">
+                    <span class="review-text">{review.text}</span>
+                    {review.expandedText && (
+                      <>
+                        <span class="dots">...</span>
+                        <span class="show_more_text hidden">{review.expandedText}</span>
+                      </>
+                    )}
+                  </p>
+                </div>
+                
+                {review.expandedText && (
+                  <div class="btn_holder mb-4">
+                    <button class="btn_show_more text-accent2 hover:text-accent transition-colors font-medium">
+                      <span class="more">Show more</span>
+                      <span class="less hidden">Show less</span>
+                    </button>
+                  </div>
+                )}
+                
+                <div class="review-footer">
+                  <p class="user_name font-bold text-primary">{review.name}</p>
+                  <p class="reviews_date text-sm text-gray-500">{review.date}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <!-- Navigation arrows -->
+        <div class="slide-button-next absolute top-1/2 right-4 transform -translate-y-1/2 z-10 cursor-pointer">
+          <svg class="w-8 h-8 text-gray-400 hover:text-accent transition-colors" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <div class="slide-button-prev absolute top-1/2 left-4 transform -translate-y-1/2 z-10 cursor-pointer">
+          <svg class="w-8 h-8 text-gray-400 hover:text-accent transition-colors" fill="currentColor" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize show more/less functionality
+  document.querySelectorAll('.btn_show_more').forEach(button => {
+    button.addEventListener('click', function() {
+      const card = this.closest('.review-card');
+      const expandedText = card.querySelector('.show_more_text');
+      const dots = card.querySelector('.dots');
+      const moreText = this.querySelector('.more');
+      const lessText = this.querySelector('.less');
+      
+      if (expandedText.classList.contains('hidden')) {
+        expandedText.classList.remove('hidden');
+        dots.classList.add('hidden');
+        moreText.classList.add('hidden');
+        lessText.classList.remove('hidden');
+      } else {
+        expandedText.classList.add('hidden');
+        dots.classList.remove('hidden');
+        moreText.classList.remove('hidden');
+        lessText.classList.add('hidden');
+      }
+    });
+  });
+  
+  // Initialize slider if Swiper is available
+  if (typeof Swiper !== 'undefined') {
+    const reviewsSlider = new Swiper('[data-reviews-slider]', {
+      slidesPerView: 1,
+      spaceBetween: 20,
+      loop: true,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      navigation: {
+        nextEl: '.slide-button-next',
+        prevEl: '.slide-button-prev',
+      },
+      breakpoints: {
+        640: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      },
+    });
+  }
+});
+</script>
+
+<style>
+.reviews_widget {
+  background: #f8f9fa;
+}
+
+.slider_holder {
+  position: relative;
+  overflow: hidden;
+}
+
+.review-card {
+  border: 1px solid #e9ecef;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 400px;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.slide-button-next,
+.slide-button-prev {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.slide-button-next:hover,
+.slide-button-prev:hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+@media (max-width: 767px) {
+  .slide-button-next,
+  .slide-button-prev {
+    display: none;
+  }
+}
+</style>
