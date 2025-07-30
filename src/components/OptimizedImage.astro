@@ -1,0 +1,38 @@
+---
+interface Props {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  class?: string;
+  loading?: 'eager' | 'lazy';
+  fetchpriority?: 'high' | 'low' | 'auto';
+}
+
+const { 
+  src, 
+  alt, 
+  width, 
+  height, 
+  class: className, 
+  loading = 'lazy',
+  fetchpriority = 'auto'
+} = Astro.props;
+
+// Convert images to WebP when possible
+const isExternalImage = src.startsWith('http');
+const webpSrc = !isExternalImage && (src.endsWith('.jpg') || src.endsWith('.jpeg') || src.endsWith('.png')) 
+  ? src.replace(/\.(jpg|jpeg|png)$/, '.webp') 
+  : src;
+---
+
+<img 
+  src={webpSrc}
+  alt={alt}
+  width={width}
+  height={height}
+  class={className}
+  loading={loading}
+  fetchpriority={fetchpriority}
+  decoding="async"
+/>

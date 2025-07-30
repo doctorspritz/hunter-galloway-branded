@@ -1,0 +1,51 @@
+/* Critical above-the-fold CSS */
+.home_offer {
+  min-height: 600px;
+}
+
+/* Prevent layout shifts for images */
+img {
+  height: auto;
+  display: block;
+}
+
+/* Ensure hero image container maintains aspect ratio */
+.home_offer_right {
+  aspect-ratio: 4/3;
+  object-fit: cover;
+}
+
+/* Prevent layout shift for logo */
+.site-logo {
+  aspect-ratio: 4/1;
+}
+
+/* Critical font loading */
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('/fonts/GothamPro.woff2') format('woff2');
+  font-display: swap;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Gotham Pro';
+  src: url('/fonts/GothamPro-Bold.woff2') format('woff2');
+  font-display: swap;
+  font-weight: bold;
+}
+
+/* Optimize bank logos grid */
+.banks_row {
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.banks_row img {
+  max-width: 80px;
+  max-height: 40px;
+  width: auto;
+  height: auto;
+}

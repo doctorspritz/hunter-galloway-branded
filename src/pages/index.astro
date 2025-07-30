@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
@@ -20,17 +21,17 @@ import Awards from '../components/Awards.astro';
           
           <ul class="list space-y-4 mb-8">
             <li class="flex items-start gap-3">
-              <img src="/images/img_new/24_checkmark.svg" alt="checkmark" class="w-6 h-6 mt-1 flex-shrink-0">
+              <img src="/images/img_new/24_checkmark.svg" alt="checkmark" class="w-6 h-6 mt-1 flex-shrink-0" width="24" height="24" loading="eager">
               <p class="text-base leading-6">
                 <span class="font-semibold text-primary">Market-leading</span> loan approval rate in Australia of 97%
               </p>
             </li>
             <li class="flex items-start gap-3">
-              <img src="/images/img_new/24_checkmark.svg" alt="checkmark" class="w-6 h-6 mt-1 flex-shrink-0">
+              <img src="/images/img_new/24_checkmark.svg" alt="checkmark" class="w-6 h-6 mt-1 flex-shrink-0" width="24" height="24" loading="eager">
               <span class="text-base leading-6">Variety of options due to direct access to 30+ Australian banks & lenders</span>
             </li>
             <li class="flex items-start gap-3">
-              <img src="/images/img_new/24_checkmark.svg" alt="checkmark" class="w-6 h-6 mt-1 flex-shrink-0">
+              <img src="/images/img_new/24_checkmark.svg" alt="checkmark" class="w-6 h-6 mt-1 flex-shrink-0" width="24" height="24" loading="eager">
               <p class="text-base leading-6">
                 <span class="font-semibold text-primary">#1 rated</span> Mortgage Broker in Brisbane
               </p>
@@ -39,7 +40,7 @@ import Awards from '../components/Awards.astro';
           
           <a href="/calculators/borrowing-capacity/" class="inline-flex items-center bg-accent hover:bg-accent/90 text-black font-semibold px-8 py-4 rounded-lg transition-colors mb-8">
             Calculate my borrowing capacity
-            <img class="lg:hidden ml-2" src="/images/img_new/16_arrow_r_black.svg" alt="arrow">
+            <img class="lg:hidden ml-2" src="/images/img_new/16_arrow_r_black.svg" alt="arrow" width="16" height="16" loading="eager">
           </a>
 
           <div class="flex home-offer-features gap-8 items-center">
@@ -54,7 +55,7 @@ import Awards from '../components/Awards.astro';
               <p class="text-sm leading-5">Years<br class="hidden lg:block"> of experience</p>
             </div>
             <div class="items-center based-reviews text-center">
-              <img src="/images/img_new/google.svg" alt="google icon" class="w-12 h-auto mb-2 mx-auto">
+              <img src="/images/img_new/google.svg" alt="google icon" class="w-12 h-auto mb-2 mx-auto" width="48" height="48" loading="eager">
               <p class="text-sm leading-5">Based on<br class="hidden lg:block"> 2000+ reviews</p>
             </div>
           </div>
@@ -62,10 +63,18 @@ import Awards from '../components/Awards.astro';
         
         <img class="home_offer_right hidden lg:block w-full max-w-lg rounded-lg" 
              src="/images/img_new/what-you-see-when-you-look-up-full-length-shot-affectionate-family-four-holding-cardboard-roof-their-heads-while-sitting-living-room-home.jpg" 
-             alt="Happy family">
+             alt="Happy family"
+             width="512"
+             height="384"
+             loading="eager"
+             fetchpriority="high">
         <img class="home_offer_right lg:hidden w-full rounded-lg" 
              src="/images/img_new/what-you-see-when-you-look-up-full-length-shot-affectionate-family-four-holding-cardboard-roof-their-heads-while-sitting-living-room-home.png" 
-             alt="Happy family">
+             alt="Happy family"
+             width="512"
+             height="384"
+             loading="eager"
+             fetchpriority="high">
       </div>
     </div>
   </section>
@@ -118,7 +127,7 @@ import Awards from '../components/Awards.astro';
             </div>
           </div>
           <div class="purpose-block__img absolute inset-0">
-            <img src="/images/pages/front/first-home.webp" alt="First Home" class="w-full h-full object-cover" loading="lazy">
+            <img src="/images/pages/front/first-home.webp" alt="First Home" class="w-full h-full object-cover" width="400" height="300" loading="lazy">
           </div>
         </a>
         
@@ -133,7 +142,7 @@ import Awards from '../components/Awards.astro';
             </div>
           </div>
           <div class="purpose-block__img absolute inset-0">
-            <img src="/images/pages/front/refinance.webp" alt="Refinance" class="w-full h-full object-cover" loading="lazy">
+            <img src="/images/pages/front/refinance.webp" alt="Refinance" class="w-full h-full object-cover" width="400" height="300" loading="lazy">
           </div>
         </a>
         
@@ -148,7 +157,7 @@ import Awards from '../components/Awards.astro';
             </div>
           </div>
           <div class="purpose-block__img absolute inset-0">
-            <img src="/images/pages/front/upgrade.webp" alt="Upgrade Home" class="w-full h-full object-cover" loading="lazy">
+            <img src="/images/pages/front/upgrade.webp" alt="Upgrade Home" class="w-full h-full object-cover" width="400" height="300" loading="lazy">
           </div>
         </a>
         
@@ -163,7 +172,7 @@ import Awards from '../components/Awards.astro';
             </div>
           </div>
           <div class="purpose-block__img absolute inset-0">
-            <img src="/images/pages/front/buy-luxury.webp" alt="Investment Property" class="w-full h-full object-cover" loading="lazy">
+            <img src="/images/pages/front/buy-luxury.webp" alt="Investment Property" class="w-full h-full object-cover" width="400" height="300" loading="lazy">
           </div>
         </a>
       </div>
@@ -177,20 +186,20 @@ import Awards from '../components/Awards.astro';
         We offer flexibility and best rates due to the variety of banks & <span class="whitespace-nowrap">lender networks</span> we work with
       </h3>
       <div class="flex flex-wrap banks_row justify-center items-center gap-6 lg:gap-8">
-        <img src="/images/img_new/logos/fm.svg" alt="First Mac" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity">
-        <img src="/images/img_new/logos/bw.svg" alt="Bankwest" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity">
-        <img src="/images/img_new/logos/teachers-mutual-bank.png" alt="Teachers Mutual Bank" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity">
-        <img src="/images/img_new/logos/westpac_logo.svg" alt="Westpac" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity">
-        <img src="/images/img_new/logos/george.svg" alt="St.George" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity">
-        <img src="/images/img_new/logos/macq_logo.png" alt="Macquarie" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity">
-        <img src="/images/img_new/logos/mebank.jpg" alt="ME Bank" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity">
-        <img src="/images/img_new/logos/nab.svg" alt="NAB" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity">
-        <img src="/images/img_new/logos/ing.svg" alt="ING" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity">
-        <img src="/images/img_new/logos/suncorp.svg" alt="Suncorp" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity">
-        <img src="/images/img_new/logos/anz.svg" alt="ANZ" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity">
-        <img src="https://assets-global.website-files.com/6136b19c6ce8df83584ee2cf/6147e7a162f7c8729cdffb97_bank-of-queensland-limited-boq-vector-logo%20copy-2.png" alt="Bank of Queensland" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity">
-        <img src="/images/img_new/logos/cb.svg" alt="CommBank" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity">
-        <img src="https://www.auswidebank.com.au/Client_Theme/imgs/auswide-bank-logo.png" alt="Auswide Bank" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity">
+        <img src="/images/img_new/logos/fm.svg" alt="First Mac" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" width="80" height="40" loading="lazy">
+        <img src="/images/img_new/logos/bw.svg" alt="Bankwest" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" width="80" height="40" loading="lazy">
+        <img src="/images/img_new/logos/teachers-mutual-bank.png" alt="Teachers Mutual Bank" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" width="80" height="40" loading="lazy">
+        <img src="/images/img_new/logos/westpac_logo.svg" alt="Westpac" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" width="80" height="40" loading="lazy">
+        <img src="/images/img_new/logos/george.svg" alt="St.George" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" width="80" height="40" loading="lazy">
+        <img src="/images/img_new/logos/macq_logo.png" alt="Macquarie" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" width="80" height="40" loading="lazy">
+        <img src="/images/img_new/logos/mebank.jpg" alt="ME Bank" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" width="80" height="40" loading="lazy">
+        <img src="/images/img_new/logos/nab.svg" alt="NAB" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" width="80" height="40" loading="lazy">
+        <img src="/images/img_new/logos/ing.svg" alt="ING" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" width="80" height="40" loading="lazy">
+        <img src="/images/img_new/logos/suncorp.svg" alt="Suncorp" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" width="80" height="40" loading="lazy">
+        <img src="/images/img_new/logos/anz.svg" alt="ANZ" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" width="80" height="40" loading="lazy">
+        <img src="https://assets-global.website-files.com/6136b19c6ce8df83584ee2cf/6147e7a162f7c8729cdffb97_bank-of-queensland-limited-boq-vector-logo%20copy-2.png" alt="Bank of Queensland" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" width="80" height="40" loading="lazy">
+        <img src="/images/img_new/logos/cb.svg" alt="CommBank" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" width="80" height="40" loading="lazy">
+        <img src="https://www.auswidebank.com.au/Client_Theme/imgs/auswide-bank-logo.png" alt="Auswide Bank" class="h-8 lg:h-10 w-auto opacity-70 hover:opacity-100 transition-opacity" width="80" height="40" loading="lazy">
       </div>
     </div>
   </section>
@@ -217,7 +226,7 @@ import Awards from '../components/Awards.astro';
         <div class="calc__btn-wrap">
           <button class="calc__btn bg-accent hover:bg-accent/90 text-black font-semibold px-8 py-4 rounded-lg transition-colors inline-flex items-center">
             Calculate
-            <img class="lg:hidden ml-2" src="/images/img_new/16_arrow_r_black.svg" alt="arrow">
+            <img class="lg:hidden ml-2" src="/images/img_new/16_arrow_r_black.svg" alt="arrow" width="16" height="16" loading="eager">
           </button>
         </div>
       </div>
@@ -248,10 +257,10 @@ import Awards from '../components/Awards.astro';
             <span>Availability of green zones and cafes/bars</span>
           </li>
         </ul>
-        <img class="lg:hidden mb-6" src="/images/img_new/to-map.svg" alt="map image">
+        <img class="lg:hidden mb-6" src="/images/img_new/to-map.svg" alt="map image" width="300" height="200" loading="lazy">
         <a href='/suburbs-map/' target="_blank" class="to-map__button bg-accent hover:bg-accent/90 text-black font-semibold px-8 py-4 rounded-lg transition-colors inline-flex items-center">
           Explore map
-          <img class="lg:hidden ml-2" src="/images/img_new/16_arrow_r_black.svg" alt="arrow">
+          <img class="lg:hidden ml-2" src="/images/img_new/16_arrow_r_black.svg" alt="arrow" width="16" height="16" loading="lazy">
         </a>
       </div>
     </div>
