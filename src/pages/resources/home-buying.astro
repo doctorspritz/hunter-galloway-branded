@@ -1,0 +1,430 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import Hero from '../../components/Hero.astro';
+import ServiceGrid from '../../components/ServiceGrid.astro';
+import CTASection from '../../components/CTASection.astro';
+import StatsSection from '../../components/StatsSection.astro';
+import AccordionWidget from '../../components/widgets/AccordionWidget.astro';
+import DarkHolderWidget from '../../components/widgets/DarkHolderWidget.astro';
+
+// Getting Started Resources
+const gettingStartedResources = [
+  {
+    title: "First Home Buyer Readiness Guide",
+    description: "Complete checklist to determine if you're ready to buy your first home, including financial assessment and preparation steps.",
+    href: "/resources/blog/first-home-buyers/readiness-guide/",
+    icon: "🏠",
+    badge: "Essential"
+  },
+  {
+    title: "How Much Can I Afford?",
+    description: "Calculate your true borrowing capacity and understand how lenders assess your affordability.",
+    href: "/resources/guides/getting-started/affordability/",
+    icon: "💰"
+  },
+  {
+    title: "Deposit Requirements Guide",
+    description: "Learn about minimum deposits, genuine savings, and strategies to save for your home deposit faster.",
+    href: "/resources/guides/getting-started/deposit-requirements/",
+    icon: "🏦"
+  },
+  {
+    title: "Budgeting for Homeownership",
+    description: "Master your finances with our comprehensive budgeting guide designed for future homeowners.",
+    href: "/resources/guides/getting-started/budgeting/",
+    icon: "📊"
+  }
+];
+
+// Buying Process Guides
+const buyingProcessGuides = [
+  {
+    title: "Complete Buying Process Guide",
+    description: "Step-by-step walkthrough from pre-approval to getting your keys, covering every stage of purchasing a home.",
+    href: "/resources/guides/buying-process/",
+    icon: "📋",
+    badge: "Comprehensive"
+  },
+  {
+    title: "Getting Pre-Approval",
+    description: "Why pre-approval is crucial and how to get conditionally approved before you start house hunting.",
+    href: "/resources/guides/loan-process/pre-approval/",
+    icon: "✅"
+  },
+  {
+    title: "Property Research & Inspections",
+    description: "How to research suburbs, inspect properties, and identify potential issues before making an offer.",
+    href: "/resources/guides/buying-process/research/",
+    icon: "🔍"
+  },
+  {
+    title: "Making Offers & Negotiating",
+    description: "Strategies for making competitive offers and negotiating the best price on your dream home.",
+    href: "/resources/guides/buying-process/making-offers/",
+    icon: "🤝"
+  },
+  {
+    title: "Buying at Auction",
+    description: "Expert tips for auction success including bidding strategies and your complete auction checklist.",
+    href: "/resources/guides/buying-process/auctions/",
+    icon: "🔨"
+  },
+  {
+    title: "Settlement Process",
+    description: "What happens between signing contracts and getting your keys, including final inspections and utilities setup.",
+    href: "/resources/guides/buying-process/settlement/",
+    icon: "🔑"
+  }
+];
+
+// Loan & Finance Guides
+const loanGuides = [
+  {
+    title: "Choosing the Right Home Loan",
+    description: "Compare different loan types and features to find the perfect match for your situation.",
+    href: "/resources/guides/loan-types/choosing-right-loan/",
+    icon: "🎯",
+    badge: "Popular"
+  },
+  {
+    title: "Finance Basics Explained",
+    description: "Understand interest rates, loan terms, LVR, and other essential mortgage concepts.",
+    href: "/resources/guides/loan-types/finance-basics/",
+    icon: "📚"
+  },
+  {
+    title: "Questions to Ask Your Broker",
+    description: "Essential questions to ensure you're getting the best advice and loan options.",
+    href: "/resources/guides/loan-process/broker-questions/",
+    icon: "❓"
+  },
+  {
+    title: "If Your Loan Gets Declined",
+    description: "What to do if your application is rejected and how to improve your chances next time.",
+    href: "/resources/guides/loan-process/loan-declined/",
+    icon: "🔄"
+  }
+];
+
+// Tools & Calculators
+const tools = [
+  {
+    title: "Borrowing Power Calculator",
+    description: "Calculate how much you can borrow based on your income, expenses, and deposit.",
+    href: "/calculators/borrowing-capacity/",
+    icon: "🧮",
+    badge: "Interactive"
+  },
+  {
+    title: "Mortgage vs Rent Calculator",
+    description: "Compare your current rent to potential mortgage payments and see if buying makes sense.",
+    href: "/calculators/mortgage-vs-rent/",
+    icon: "🏠"
+  },
+  {
+    title: "Location Genius Tool",
+    description: "Find the best suburbs based on your budget, lifestyle preferences, and investment goals.",
+    href: "/resources/tools/location-genius/",
+    icon: "📍"
+  },
+  {
+    title: "Free Mortgage Report",
+    description: "Get a personalized report showing your borrowing capacity and loan options.",
+    href: "/resources/tools/mortgage-report/",
+    icon: "📈"
+  }
+];
+
+// Government Support & Grants
+const governmentSupport = [
+  {
+    title: "Queensland First Home Grant",
+    description: "Up to $15,000 for eligible first home buyers. Check requirements and application process.",
+    href: "/resources/blog/grants-schemes/qld-first-home-grant/",
+    icon: "🏛️",
+    badge: "$15,000"
+  },
+  {
+    title: "First Home Guarantee Scheme",
+    description: "Buy with as little as 5% deposit without paying LMI. Limited places available.",
+    href: "/resources/guides/getting-started/deposit-requirements/",
+    icon: "🛡️"
+  },
+  {
+    title: "Stamp Duty Concessions",
+    description: "Save thousands on stamp duty if you're a first home buyer in Queensland.",
+    href: "/resources/guides/getting-started/affordability/",
+    icon: "💵"
+  }
+];
+
+const stats = [
+  { value: "500+", label: "Resources Available", description: "Guides, tools & tips" },
+  { value: "97%", label: "Success Rate", description: "For prepared buyers" },
+  { value: "$15k", label: "Grants Available", description: "For eligible buyers" },
+  { value: "24/7", label: "Access", description: "Learn at your pace" }
+];
+
+const faqs = [
+  {
+    question: "How do I know if I'm ready to buy a home?",
+    answer: `<p>You're ready to buy when you have:</p>
+    <ul>
+      <li>Stable employment (ideally 6+ months in your current job)</li>
+      <li>A deposit saved (minimum 5%, ideally 10-20%)</li>
+      <li>Good credit history with no major defaults</li>
+      <li>Clear understanding of your budget and ongoing costs</li>
+    </ul>
+    <p>Use our <a href="/resources/blog/first-home-buyers/readiness-guide/">First Home Buyer Readiness Guide</a> for a complete assessment.</p>`
+  },
+  {
+    question: "What's the home buying process timeline?",
+    answer: `<p>The typical home buying timeline is 3-6 months:</p>
+    <ul>
+      <li><strong>Pre-approval:</strong> 1-2 weeks</li>
+      <li><strong>House hunting:</strong> 4-12 weeks</li>
+      <li><strong>Making an offer:</strong> 1-7 days</li>
+      <li><strong>Loan approval:</strong> 2-3 weeks</li>
+      <li><strong>Settlement:</strong> 30-90 days</li>
+    </ul>
+    <p>This can vary based on market conditions and your preparedness.</p>`
+  },
+  {
+    question: "How much deposit do I need?",
+    answer: `<p>Deposit requirements vary:</p>
+    <ul>
+      <li><strong>Minimum:</strong> 5% with Lenders Mortgage Insurance (LMI)</li>
+      <li><strong>Ideal:</strong> 20% to avoid LMI costs</li>
+      <li><strong>First Home Guarantee:</strong> As little as 5% without LMI</li>
+      <li><strong>Guarantor loans:</strong> Potentially $0 deposit</li>
+    </ul>
+    <p>Plus budget 3-5% for purchase costs (stamp duty, legal fees, inspections).</p>`
+  },
+  {
+    question: "Should I get pre-approval before looking at homes?",
+    answer: `<p>Yes, absolutely! Pre-approval is essential because:</p>
+    <ul>
+      <li>You'll know your exact budget before falling in love with a property</li>
+      <li>Sellers and agents take you more seriously</li>
+      <li>You can move quickly when you find the right property</li>
+      <li>It identifies any issues early that could delay your purchase</li>
+    </ul>
+    <p>Get your <a href="/free-assessment/">free assessment</a> to start the pre-approval process.</p>`
+  }
+];
+---
+
+<BaseLayout 
+  title="Home Buying Resources | Complete Guides & Tools | Hunter Galloway"
+  description="Everything you need to buy your first home or investment property. Step-by-step guides, calculators, checklists, and expert advice from Brisbane's top mortgage brokers."
+>
+  <Fragment slot="header"><SiteHeader /></Fragment>
+  
+  <Hero 
+    title="Your Complete Home Buying Resource Centre"
+    subtitle="From first-time buyer guides to investment strategies, find everything you need to navigate the property market with confidence. Access 500+ resources, tools, and expert insights."
+    buttonText="Start Your Journey"
+    buttonHref="#getting-started"
+    badge="Free Resources"
+  />
+
+  <StatsSection 
+    stats={stats}
+    backgroundColor="white"
+  />
+
+  <!-- Getting Started Section -->
+  <section id="getting-started" class="py-16 bg-neutral">
+    <div class="container max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+          Getting Started: First Steps
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Begin your home buying journey with these essential guides designed for first-time buyers and those new to the property market.
+        </p>
+      </div>
+      <ServiceGrid 
+        services={gettingStartedResources}
+        columns={2}
+      />
+    </div>
+  </section>
+
+  <!-- Buying Process Guides -->
+  <section class="py-16 bg-white">
+    <div class="container max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+          The Complete Buying Process
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Step-by-step guides covering every stage from pre-approval to settlement. Navigate the process like a pro with our detailed walkthroughs.
+        </p>
+      </div>
+      <ServiceGrid 
+        services={buyingProcessGuides}
+        columns={3}
+      />
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <CTASection 
+    title="Need Personal Guidance?"
+    subtitle="Our expert mortgage brokers can guide you through every step of your home buying journey with personalized advice."
+    buttonText="Get Free Expert Assessment"
+    secondaryButtonText="Call Us: 07 3376 0823"
+    secondaryButtonHref="tel:0733760823"
+    backgroundColor="accent"
+  />
+
+  <!-- Loan & Finance Guides -->
+  <section class="py-16 bg-white">
+    <div class="container max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+          Understanding Home Loans
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Demystify mortgages with our comprehensive guides on loan types, features, and how to secure the best deal for your situation.
+        </p>
+      </div>
+      <ServiceGrid 
+        services={loanGuides}
+        columns={2}
+      />
+    </div>
+  </section>
+
+  <!-- Tools & Calculators -->
+  <section class="py-16 bg-neutral">
+    <div class="container max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+          Interactive Tools & Calculators
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Plan your purchase with confidence using our suite of interactive tools and calculators designed for Australian home buyers.
+        </p>
+      </div>
+      <ServiceGrid 
+        services={tools}
+        columns={2}
+      />
+    </div>
+  </section>
+
+  <!-- Government Support -->
+  <section class="py-16 bg-white">
+    <div class="container max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+          Government Support & Grants
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Take advantage of government schemes designed to help first home buyers enter the market with less deposit and lower costs.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        {governmentSupport.map(scheme => (
+          <a 
+            href={scheme.href}
+            class="group bg-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 hover:border-accent"
+          >
+            {scheme.badge && (
+              <div class="bg-accent text-black px-4 py-2 text-center font-bold">
+                {scheme.badge}
+              </div>
+            )}
+            <div class="p-6">
+              <div class="text-3xl mb-3">{scheme.icon}</div>
+              <h3 class="text-xl font-bold text-primary mb-3 group-hover:text-accent2 transition-colors">
+                {scheme.title}
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+                {scheme.description}
+              </p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Resource Categories -->
+  <section class="py-16 bg-neutral">
+    <div class="container max-w-6xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold text-primary mb-4">
+          Browse by Category
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Find exactly what you need with our organized resource library covering every aspect of home buying.
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <h3 class="text-lg font-bold text-primary mb-4">📚 Beginner Guides</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/resources/guides/getting-started/affordability/" class="text-gray-600 hover:text-accent2">Affordability Calculator</a></li>
+            <li><a href="/resources/guides/getting-started/deposit-requirements/" class="text-gray-600 hover:text-accent2">Deposit Requirements</a></li>
+            <li><a href="/resources/guides/getting-started/budgeting/" class="text-gray-600 hover:text-accent2">Budgeting Guide</a></li>
+            <li><a href="/resources/blog/first-home-buyers/readiness-guide/" class="text-gray-600 hover:text-accent2">Readiness Checklist</a></li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <h3 class="text-lg font-bold text-primary mb-4">🏡 Buying Process</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/resources/guides/buying-process/research/" class="text-gray-600 hover:text-accent2">Property Research</a></li>
+            <li><a href="/resources/guides/buying-process/inspections/" class="text-gray-600 hover:text-accent2">Inspections Guide</a></li>
+            <li><a href="/resources/guides/buying-process/making-offers/" class="text-gray-600 hover:text-accent2">Making Offers</a></li>
+            <li><a href="/resources/guides/buying-process/settlement/" class="text-gray-600 hover:text-accent2">Settlement Process</a></li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <h3 class="text-lg font-bold text-primary mb-4">💰 Loans & Finance</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/resources/guides/loan-types/choosing-right-loan/" class="text-gray-600 hover:text-accent2">Loan Types</a></li>
+            <li><a href="/resources/guides/loan-process/pre-approval/" class="text-gray-600 hover:text-accent2">Pre-Approval Guide</a></li>
+            <li><a href="/resources/guides/loan-types/finance-basics/" class="text-gray-600 hover:text-accent2">Finance Basics</a></li>
+            <li><a href="/resources/guides/loan-process/broker-questions/" class="text-gray-600 hover:text-accent2">Broker Questions</a></li>
+          </ul>
+        </div>
+        
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+          <h3 class="text-lg font-bold text-primary mb-4">🛠️ Tools & Calculators</h3>
+          <ul class="space-y-2 text-sm">
+            <li><a href="/calculators/borrowing-capacity/" class="text-gray-600 hover:text-accent2">Borrowing Calculator</a></li>
+            <li><a href="/calculators/mortgage-calculator/" class="text-gray-600 hover:text-accent2">Repayment Calculator</a></li>
+            <li><a href="/resources/tools/location-genius/" class="text-gray-600 hover:text-accent2">Suburb Finder</a></li>
+            <li><a href="/resources/tools/mortgage-report/" class="text-gray-600 hover:text-accent2">Free Report</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <AccordionWidget 
+    title="Common Home Buying Questions"
+    faqs={faqs}
+    buttonText="Ask Our Experts"
+    buttonHref="/contact"
+  />
+
+  <!-- Final CTA -->
+  <DarkHolderWidget 
+    title="Ready to Start Your Home Buying Journey?"
+    buttonText="Get Your Free Assessment Today"
+    buttonHref="/free-assessment"
+    variant="primary"
+  />
+
+  <Fragment slot="footer"><SiteFooter /></Fragment>
+</BaseLayout>
