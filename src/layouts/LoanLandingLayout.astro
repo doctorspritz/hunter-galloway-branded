@@ -1,0 +1,219 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import Rating from '../components/Rating.astro';
+import LeadForm from '../components/LeadForm.astro';
+import Awards from '../components/Awards.astro';
+
+export interface Props {
+  title: string;
+  description: string;
+  subtitle?: string;
+  heroImage?: string;
+  heroImageMobile?: string;
+  backgroundColor?: string;
+  ctaText?: string;
+  ctaUrl?: string;
+  showAwards?: boolean;
+  showLeadForm?: boolean;
+}
+
+const { 
+  title, 
+  description, 
+  subtitle,
+  heroImage,
+  heroImageMobile,
+  backgroundColor = "white",
+  ctaText = "Get Pre-Approved Today",
+  ctaUrl = "/mortgage-calculator/",
+  showAwards = true,
+  showLeadForm = true
+} = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <Fragment slot="header"><SiteHeader /></Fragment>
+  
+  <!-- Hero Section -->
+  <section class={`lp_header py-12 lg:py-16 bg-${backgroundColor}`}>
+    <div class="container max-w-6xl mx-auto px-4">
+      <div class="lp-header__inner grid lg:grid-cols-2 gap-8 items-center">
+        <div class="lp-header__left">
+          <h1 class="lp-header__title text-3xl lg:text-4xl font-bold text-primary mb-6 leading-tight">
+            <slot name="hero-title">{title}</slot>
+          </h1>
+          
+          {subtitle && (
+            <div class="lp-header__description text-lg text-gray-600 mb-8">
+              <p>{subtitle}</p>
+              <slot name="hero-description" />
+            </div>
+          )}
+          
+          <!-- Benefits List -->
+          <div class="lp-header__benefits mb-8">
+            <slot name="benefits">
+              <ul class="space-y-3">
+                <li class="flex items-start gap-3">
+                  <img src="/images/img_new/24_checkmark.svg" alt="checkmark" class="w-6 h-6 mt-1 flex-shrink-0">
+                  <span class="text-base">97% loan approval rate</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <img src="/images/img_new/24_checkmark.svg" alt="checkmark" class="w-6 h-6 mt-1 flex-shrink-0">
+                  <span class="text-base">Access to 30+ lenders</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <img src="/images/img_new/24_checkmark.svg" alt="checkmark" class="w-6 h-6 mt-1 flex-shrink-0">
+                  <span class="text-base">No broker fees</span>
+                </li>
+              </ul>
+            </slot>
+          </div>
+          
+          <div class="lp-header__action mb-8">
+            <a href={ctaUrl} class="btn-primary inline-block">
+              {ctaText}
+            </a>
+          </div>
+          
+          <div class="lp-header__rating">
+            <Rating />
+          </div>
+        </div>
+        
+        <div class="lp-header__right">
+          {heroImage && (
+            <picture class="lp-header__img block">
+              {heroImageMobile && (
+                <source srcset={heroImageMobile} media="(max-width: 992px)">
+              )}
+              <source srcset={heroImage} media="(min-width: 993px)">
+              <img 
+                src={heroImage} 
+                alt={title}
+                class="w-full rounded-lg shadow-lg"
+                loading="lazy"
+              />
+            </picture>
+          )}
+          
+          <!-- Mobile title and stats -->
+          <div class="lg:hidden mt-6">
+            <slot name="mobile-stats" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Awards Section -->
+  {showAwards && (
+    <section class="py-8 bg-neutral">
+      <div class="container max-w-6xl mx-auto px-4">
+        <Awards />
+      </div>
+    </section>
+  )}
+
+  <!-- Main Content -->
+  <main class="py-16">
+    <div class="max-w-6xl mx-auto px-4 space-y-16">
+      <!-- Benefits Grid -->
+      <section>
+        <slot name="benefits-section">
+          <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-primary mb-4">Why choose us?</h2>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+              We make the home loan process simple and stress-free.
+            </p>
+          </div>
+          
+          <div class="grid md:grid-cols-3 gap-8">
+            <slot name="benefits-grid">
+              <!-- Individual benefit cards will be provided by pages -->
+            </slot>
+          </div>
+        </slot>
+      </section>
+
+      <!-- Process Steps -->
+      <section>
+        <slot name="process-section" />
+      </section>
+
+      <!-- Features/FAQ -->
+      <section>
+        <slot name="features-section" />
+      </section>
+
+      <!-- Content -->
+      <section>
+        <article class="prose prose-lg max-w-none prose-headings:text-primary prose-a:text-accent2 prose-a:no-underline hover:prose-a:underline">
+          <slot />
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <!-- Lead Form Section -->
+  {showLeadForm && (
+    <section id="enquire" class="py-16 bg-neutral">
+      <div class="max-w-4xl mx-auto px-4">
+        <div class="text-center mb-8">
+          <h2 class="text-3xl font-bold text-primary mb-4">Ready to get started?</h2>
+          <p class="text-lg text-gray-600">
+            Get your free mortgage assessment and discover your options today.
+          </p>
+        </div>
+        <LeadForm />
+      </div>
+    </section>
+  )}
+
+  <!-- Testimonials -->
+  <section class="py-16 bg-white">
+    <div class="max-w-6xl mx-auto px-4">
+      <slot name="testimonials">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold text-primary mb-4">What our clients say</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-neutral p-6 rounded-lg">
+            <div class="flex mb-4">
+              <span class="text-accent text-2xl">★★★★★</span>
+            </div>
+            <p class="text-gray-700 mb-4">
+              "Professional, knowledgeable, and made the process so easy. Highly recommend!"
+            </p>
+            <p class="font-bold">- Sarah M.</p>
+          </div>
+          
+          <div class="bg-neutral p-6 rounded-lg">
+            <div class="flex mb-4">
+              <span class="text-accent text-2xl">★★★★★</span>
+            </div>
+            <p class="text-gray-700 mb-4">
+              "Got us a better rate than our bank offered. Excellent service from start to finish."
+            </p>
+            <p class="font-bold">- Michael T.</p>
+          </div>
+          
+          <div class="bg-neutral p-6 rounded-lg">
+            <div class="flex mb-4">
+              <span class="text-accent text-2xl">★★★★★</span>
+            </div>
+            <p class="text-gray-700 mb-4">
+              "Hunter Galloway made our dream of homeownership a reality. Thank you!"
+            </p>
+            <p class="font-bold">- Emma L.</p>
+          </div>
+        </div>
+      </slot>
+    </div>
+  </section>
+
+  <Fragment slot="footer"><SiteFooter /></Fragment>
+</BaseLayout>
