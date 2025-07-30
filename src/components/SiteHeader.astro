@@ -1,0 +1,26 @@
+---
+const menu = [
+  { label: 'Home Loans', href: '/home-loans' },
+  { label: 'Calculators', href: '/calculators' },
+  { label: 'Guides', href: '/resources' },
+  { label: 'Blog', href: '/blog' },
+];
+---
+<header class="bg-white border-b-4 border-accent sticky top-0 z-50 shadow-sm">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between py-4 px-6">
+    <a href="/" class="inline-flex items-center gap-2">
+      <img src="/logo.svg" class="h-8 w-auto" alt="Hunter Galloway"/>
+    </a>
+
+    <ul class="hidden md:flex gap-6 font-bold tracking-wide">
+      {menu.map(item => (
+        <li><a class="hover:text-accent2" href={item.href}>{item.label}</a></li>
+      ))}
+    </ul>
+
+    <a href="/contact"
+       class="btn-primary hidden lg:inline-flex">Book a Call</a>
+
+    <!-- mobile burger (optional) -->
+  </nav>
+</header>

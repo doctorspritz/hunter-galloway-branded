@@ -1,49 +1,115 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<BaseLayout title="Hunter Galloway – Award-Winning Mortgage Brokers" 
+           description="Hunter Galloway are award-winning mortgage brokers helping Australians secure their dream homes with expert advice and competitive rates.">
+  <Fragment slot="header"><SiteHeader /></Fragment>
+  
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-br from-neutral to-white py-section">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold text-primary mb-6">
+        Award-Winning <span class="text-accent2">Mortgage Brokers</span>
+      </h1>
+      <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+        We help Australians secure their dream homes with expert advice, competitive rates, and personalized service. Get your free assessment today.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/free-assessment" class="btn-primary">
+          Get Free Assessment
+        </a>
+        <a href="/contact" class="btn-secondary">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Grid -->
+  <section class="py-section bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-primary mb-4">Our Services</h2>
+        <p class="text-lg text-gray-600">Comprehensive mortgage solutions for every situation</p>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-neutral rounded-lg p-6 text-center">
+          <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">First Home Buyers</h3>
+          <p class="text-gray-600 mb-4">Expert guidance for your first property purchase, including grants and special deals.</p>
+          <a href="/first-home-loans" class="text-accent2 font-medium hover:text-accent2/80">Learn More →</a>
+        </div>
+        
+        <div class="bg-neutral rounded-lg p-6 text-center">
+          <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Refinancing</h3>
+          <p class="text-gray-600 mb-4">Lower your rates and reduce payments with our refinancing solutions.</p>
+          <a href="/refinance-home-loan" class="text-accent2 font-medium hover:text-accent2/80">Learn More →</a>
+        </div>
+        
+        <div class="bg-neutral rounded-lg p-6 text-center">
+          <div class="w-16 h-16 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold mb-2">Investment Loans</h3>
+          <p class="text-gray-600 mb-4">Build your property portfolio with our investment loan expertise.</p>
+          <a href="/investment-loans" class="text-accent2 font-medium hover:text-accent2/80">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="bg-accent2 text-white py-section">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-4">Why Choose Hunter Galloway?</h2>
+      <p class="text-xl mb-8 opacity-90">Award-winning service with over 30 lenders and hundreds of loan products</p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12">
+        <div class="text-center">
+          <div class="text-4xl font-bold mb-2">30+</div>
+          <div class="text-blue-100">Lenders</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold mb-2">100+</div>
+          <div class="text-blue-100">Loan Products</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold mb-2">5★</div>
+          <div class="text-blue-100">Rating</div>
+        </div>
+        <div class="text-center">
+          <div class="text-4xl font-bold mb-2">Free</div>
+          <div class="text-blue-100">Assessment</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-section bg-neutral">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-primary mb-4">Ready to Get Started?</h2>
+      <p class="text-lg text-gray-600 mb-8">Book your free assessment and let our experts find you the perfect loan</p>
+      <a href="/free-assessment" class="btn-primary">
+        Get Your Free Assessment
+      </a>
+    </div>
+  </section>
+
+  <Fragment slot="footer"><SiteFooter /></Fragment>
+</BaseLayout>

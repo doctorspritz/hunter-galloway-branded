@@ -1,0 +1,19 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+const { frontmatter } = Astro.props;
+const pubDate = frontmatter.pubDate instanceof Date ? frontmatter.pubDate : new Date(frontmatter.pubDate);
+---
+<BaseLayout title={`${frontmatter.title} – Hunter Galloway`} description={frontmatter.description}>
+  <Fragment slot="header"><SiteHeader /></Fragment>
+  <article class="prose lg:prose-lg mx-auto py-section px-4">
+    <h1>{frontmatter.title}</h1>
+    <p class="text-sm text-gray-500 mb-8">
+      {pubDate.toLocaleDateString('en-AU', { day:'numeric', month:'long', year:'numeric'})}
+    </p>
+    <slot />
+  </article>
+  <Fragment slot="footer"><SiteFooter /></Fragment>
+</BaseLayout>
